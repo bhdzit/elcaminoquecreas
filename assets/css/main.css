@@ -3,18 +3,17 @@ body {
     padding: 0px;
 }
 
-.svg-menu{
+.svg-menu {
     width: 7%;
     margin-right: 15px;
 }
 
-
-.shape{
+.shape {
     margin-top: 20px;
     shape-outside: polygon(-71px 22px, 54px 23px, 96px -28px, 144px 22px, 696px 23px, 697px 342px, -68px 347px);
     clip-path: polygon(-71px 22px, 54px 22px, 96px 1px, 144px 22px, 696px 22px, 697px 645px, -68px 645px);
-  
 }
+
 .navbar-area {
     position: absolute;
     margin: 10px;
@@ -28,7 +27,6 @@ body {
     font-weight: unset;
     text-transform: unset;
     opacity: unset;
-
 }
 
 [type=search] {
@@ -39,7 +37,6 @@ body {
 }
 
 [type=search]::placeholder {
-
     color: white;
 }
 
@@ -106,7 +103,6 @@ body {
     float: right;
     color: #a18cd1;
     cursor: pointer;
-
 }
 
 .btn-fade {
@@ -127,48 +123,85 @@ body {
     font-size: 2vw;
 }
 
-.social li{
+.social li {
     opacity: 0.65;
-    
 }
-.social i{
+
+.social i {
     color: #a18cd1;
     opacity: unset;
 }
-.social a{
+
+.social a {
     font-size: unset !important;
 }
-.nav-pills .nav-link.active{
+
+.nav-pills .nav-link.active {
     font-weight: bold !important;
     background: unset;
 }
-.card-item-a{
-    padding: 8px  !important;
+
+.card-item-a {
+    padding: 8px !important;
     font-size: 18px !important;
     cursor: pointer;
-    
 }
 
-.bg-fade{
-    background: linear-gradient(180deg, rgba(94, 125, 212, 0.65), rgba(157, 168, 222, 0.65))  !important;
+.bg-fade {
+    background: linear-gradient(180deg, rgba(94, 125, 212, 0.65), rgba(157, 168, 222, 0.65)) !important;
+}
 
+.dropdown-menu .dropdown-menu {
+    top: -75px !important;
 }
-.dropdown-menu .dropdown-menu{
-    top:-75px !important;
-}
-nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
+
+nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
     background-color: unset !important;
 }
 
-.movil-nav{
-border: unset;
+.movil-nav {
+    border: unset;
+}
 
+.btn-facebook-login {
+    background: linear-gradient(180deg, rgb(51, 70, 156), rgb(39, 35, 35));
+    color: white;
+    border: unset;
+    border-radius: 50px;
+    width: 75%;
+}
+.btn-gmail-login {
+    background: linear-gradient(180deg, rgb(94,125,212), rgb(157, 168, 222));
+    color: white;
+    border: unset;
+    border-radius: 50px;
+    width: 75%;
+}
+
+
+input[type=checkbox]
+{
+    transform: scale(1.5);
+}
+
+
+input[type=checkbox]:checked
+{
+    transform: scale(1.5);
+    filter: invert(100%) hue-rotate(208deg) brightness(1);
+}
+
+
+.login-link{
+    color: #6884D6 !important;
 
 }
-@media (max-width: 767px){
-    .navbar-area .navbar .navbar-collapse{
+.login-link:hover{
+    color: #696f81 !important;
+    cursor: pointer;
+}
+@media (max-width: 767px) {
+    .navbar-area .navbar .navbar-collapse {
         color: #fff;
-       
     }
 }
-

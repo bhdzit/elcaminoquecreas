@@ -32,9 +32,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
-    <style>
-        
-    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
     <script src="https://kit.fontawesome.com/015cfc4544.js" crossorigin="anonymous"></script>
 
 </head>
@@ -78,26 +78,241 @@
                             <a class="navbar-caption " href="/"><i class="fas fa-home"></i> Inicio</a>
                         </li>
 
-                        <li class="nav-item ">
-                            <a class="navbar-caption" href="/"><i class="fas fa-file-alt"></i> Informes</a>
+                        <li class="nav-item float-left d-none d-sm-none d-md-block">
+
+                            <div class="btn-group">
+                                <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <i class="fas fa-file-alt"></i> Informes
+                                </a>
+                                <div class="dropdown-menu  shape"
+                                    style="flex-direction: column; background: linear-gradient(180deg, rgba(94, 125, 212, 0.65), rgba(157, 168, 222, 0.65));">
+
+                                    <div class="row pb-3" style="min-width: 700px;">
+                                        <div class="col-5 border-right  border-dark mt-5">
+
+                                            <ul class="navbar-nav " style="flex-direction: column; ">
+
+                                                <li id="1" class="nav-item" onmouseover="navbarChange(this)"
+                                                    onclick="navbarChange(this)">
+                                                    <a class="nav-link active">Revolución Solar</a>
+                                                </li>
+
+                                                <li id="2" class="nav-item" onmouseover="navbarChange(this)"
+                                                    onclick="navbarChange(this)">
+                                                    <a class="nav-link">Revolución lunar</a>
+                                                </li>
+
+                                                <li id="3" class="nav-item" onmouseover="navbarChange(this)"
+                                                    onclick="navbarChange(this)">
+                                                    <a class="nav-link ">Carta Natal</a>
+                                                </li>
+
+
+
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-7">
+                                            <div class="card-body nav-card ">
+                                                <ul class="nav flex-column ">
+                                                    <li class="nav-item"><a class="nav-link"><img class="svg-menu"
+                                                                src="assets/svg/moon-star.svg"> Arco de Casa II</a>
+                                                    </li>
+                                                    <li class="nav-item"><a class="nav-link"><img class="svg-menu"
+                                                                src="assets/svg/galaxy1.svg"> Regentes I</a></li>
+                                                    <li class="nav-item"><a class="nav-link"><img class="svg-menu"
+                                                                src="assets/svg/commet.svg"> Regentes II</a></li>
+                                                    <li class="nav-item"><a class="nav-link"><img class="svg-menu"
+                                                                src="assets/svg/galaxy2.svg"> Cuspides</a></li>
+                                                </ul>
+
+                                            </div>
+
+                                            <div class="card-body nav-card d-md-none">
+                                                <ul class="nav flex-column ">
+                                                    <li class="nav-item"><a class="nav-link">Arco </a></li>
+                                                    <li class="nav-item"><a class="nav-link">Regentes I</a></li>
+                                                    <li class="nav-item"><a class="nav-link">Regentes II</a></li>
+                                                    <li class="nav-item"><a class="nav-link">Cuspides</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="card-body nav-card d-md-none">
+                                                <ul class="nav flex-column ">
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img
+                                                                class="svg-menu" src="assets/svg/moon-star.svg">
+                                                            Comportamiento</a></li>
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img
+                                                                class="svg-menu" src="assets/svg/galaxy1.svg">
+                                                            Informe
+                                                            Harrington</a></li>
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img
+                                                                class="svg-menu" src="assets/svg/commet.svg">
+                                                            Informe
+                                                            Waldemath Lilith</a></li>
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img
+                                                                class="svg-menu" src="assets/svg/galaxy2.svg">
+                                                            Informe
+                                                            Lilith</a></li>
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img
+                                                                class="svg-menu" src="assets/svg/moon-star.svg">
+                                                            Informe
+                                                            Marte</a></li>
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img
+                                                                class="svg-menu" src="assets/svg/galaxy1.svg">
+                                                            Informe
+                                                            Venus</a></li>
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img
+                                                                class="svg-menu" src="assets/svg/commet.svg">
+                                                            Informe
+                                                            Academia</a></li>
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img
+                                                                class="svg-menu" src="assets/svg/galaxy2.svg">
+                                                            Informe
+                                                            Urania</a></li>
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"> <img
+                                                                class="svg-menu" src="assets/svg/moon-star.svg">
+                                                            Informe
+                                                            Leverrier</a></li>
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"> <img
+                                                                class="svg-menu" src="assets/svg/galaxy1.svg">
+                                                            Informe
+                                                            Represión Infantil</a></li>
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"> <img
+                                                                class="svg-menu" src="assets/svg/commet.svg">
+                                                            Informe
+                                                            Pluton</a></li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
+                        <li class="nav-item float-left d-block d-md-none">
+                            <div id="accordion">
+                                <div class="card movil-nav">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                Revolicón Lunar
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                        data-parent="#accordion">
+                                        <div class="card-body ">
+                                            <ul class="nav flex-column ">
+                                                <li class="nav-item"><a class="nav-link"> Arco de Casa II</a>
+                                                </li>
+                                                <li class="nav-item"><a class="nav-link">Regentes I</a></li>
+                                                <li class="nav-item"><a class="nav-link">Regentes II</a></li>
+                                                <li class="nav-item"><a class="nav-link">Cuspides</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card movil-nav">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
+                                                Revolución Solar
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="nav flex-column ">
+                                                <li class="nav-item"><a class="nav-link"> Arco de Casa II</a>
+                                                </li>
+                                                <li class="nav-item"><a class="nav-link"> Regentes I</a></li>
+                                                <li class="nav-item"><a class="nav-link"> Regentes II</a></li>
+                                                <li class="nav-item"><a class="nav-link"> Cuspides</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card movil-nav">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseThree" aria-expanded="false"
+                                                aria-controls="collapseThree">
+                                                Carta Natal
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="nav flex-column ">
+                                                <li class="nav-item  "><a class="nav-link card-item-a">
+                                                        Comportamiento</a></li>
+                                                <li class="nav-item  "><a class="nav-link card-item-a">
+                                                        Informe
+                                                        Harrington</a></li>
+                                                <li class="nav-item  "><a class="nav-link card-item-a">
+                                                        Informe
+                                                        Waldemath Lilith</a></li>
+                                                <li class="nav-item  "><a class="nav-link card-item-a">
+                                                        Informe
+                                                        Lilith</a></li>
+                                                <li class="nav-item  "><a class="nav-link card-item-a">
+                                                        Informe
+                                                        Marte</a></li>
+                                                <li class="nav-item  "><a class="nav-link card-item-a">                                                        Informe
+                                                        Venus</a></li>
+                                                <li class="nav-item  "><a class="nav-link card-item-a">
+                                                        Informe
+                                                        Academia</a></li>
+                                                <li class="nav-item  "><a class="nav-link card-item-a">
+                                                        Informe
+                                                        Urania</a></li>
+                                                <li class="nav-item  "><a class="nav-link card-item-a">
+                                                        Informe
+                                                        Leverrier</a></li>
+                                                <li class="nav-item  "><a class="nav-link card-item-a">
+                                                        Informe
+                                                        Represión Infantil</a></li>
+                                                <li class="nav-item  "><a class="nav-link card-item-a">
+                                                        Informe
+                                                        Pluton</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo" aria-controls="navbarTwo" aria-expanded="false" aria-label="Toggle navigation">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo"
+                    aria-controls="navbarTwo" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler-icon"></span>
                     <span class="toggler-icon"></span>
                     <span class="toggler-icon"></span>
                 </button>
 
                 <div class="d-none d-sm-none d-md-block col-lg-2  row justify-content-center">
-                    <img src="assets/images/logo.png" width="50%" style="margin: 10px 0px 10px 0px;" sizes="220px">
+                    <img src="assets/images/logo.png" width="50%" style="margin-left: auto;
+                    display: block;
+                    margin-right: auto;" sizes="220px">
                 </div>
 
                 <div class="collapse navbar-collapse sub-menu-bar d-none row justify-content-left" id="navbarTwo">
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item"><input type="search" class="searchinput" placeholder="Buscar"><i
                                 class="fas fa-search fa-lg text-white"></i></li>
-                        <li class="mr-3 ml-3"><i class="fas fa-user fa-lg text-white"></i></li>
+                        <li class="mr-3 ml-3"><a href="login.html"><i class="fas fa-user fa-lg text-white"></i></a></li>
                         <li class="ml-3"><i class="fas fa-shopping-cart fa-lg text-white"></i></li>
                     </ul>
                 </div>
@@ -114,7 +329,8 @@
     <section id="home" class="slider_area" style=" background-image: url('./assets/images/bg1.png');">
         <div class="container">
             <div class="row justify-content-center">
-                <img src="assets/images/logo.png" width="60%" style="margin: 150px;">
+                <img src="assets/images/logo.png" width="60%" style="margin: 150px;"
+                    class="animate__animated animate__bounce">
             </div>
         </div>
     </section>
@@ -186,6 +402,8 @@
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
+
+
 
     <!--====== FEATRES TWO PART ENDS ======-->
 
@@ -291,26 +509,26 @@
             </div>
             <div>
                 <div class="row justify-content-center d-sm-none d-lg-flex">
-                    
+
                     <ul class="navbar-nav " style="flex-direction: row;">
 
-                        <li id="1" class="nav-item"  onclick="navbarChange(this)">
+                        <li id="4" class="nav-item" onclick="navbarChange(this)">
                             <a class="nav-link active">Revolución Solar</a>
                         </li>
 
-                        <li id="2" class="nav-item" onclick="navbarChange(this)">
+                        <li id="5" class="nav-item" onclick="navbarChange(this)">
                             <a class="nav-link">Revolución lunar</a>
                         </li>
 
-                        <li id="3" class="nav-item" onclick="navbarChange(this)">
+                        <li id="6" class="nav-item" onclick="navbarChange(this)">
                             <a class="nav-link ">Carta Natal</a>
                         </li>
 
-                        <li id="3" class="nav-item" onclick="navbarChange(this)">
+                        <li id="7" class="nav-item" onclick="navbarChange(this)">
                             <a class="nav-link ">Servicios</a>
                         </li>
 
-                        <li id="3" class="nav-item" onclick="navbarChange(this)">
+                        <li id="8" class="nav-item" onclick="navbarChange(this)">
                             <a class="nav-link ">Compras</a>
                         </li>
                     </ul>
@@ -670,7 +888,7 @@
                         <li><a href="#">CONTACTO</a></li>
                         <li><a href="#">PRIVACIDAD</a></li>
                         <li><a href="#">RECLAMO</a></li>
-                        <li><a href="https://bhdzit.github.io/" style="font-size: unset;" >DESAROLLADOR</a></li>
+                        <li><a href="https://bhdzit.github.io/" style="font-size: unset;">DESAROLLADOR</a></li>
 
                     </ul> <!-- social -->
 
@@ -741,22 +959,19 @@
 
     <!--====== Main js ======-->
     <script src="assets/js/main.js"></script>
-    <script>
 
-        let cards = $('.card');
+<script>
+    let cards = $('.card');
 
-        for (let i = 0; i < cards.length; i++) {
-            $(cards[i]).on('show.bs.collapse', function (e) {
+    for (let i = 0; i < cards.length; i++) { $(cards[i]).on('show.bs.collapse', function (e) {
+        cards[i].querySelector("i").className="fas fa-minus" ; // alert("asdsd");<i class=""></i>fas fa-minus
 
-                cards[i].querySelector("i").className = "fas fa-minus";
-                //            alert("asdsd");<i class=""></i>fas fa-minus
+        });
 
-            });
+        $(cards[i]).on('hide.bs.collapse', function (e) {
+        cards[i].querySelector("i").className = "fas fa-plus";
 
-            $(cards[i]).on('hide.bs.collapse', function (e) {
-                cards[i].querySelector("i").className = "fas fa-plus";
-
-            });
+        });
 
         }
 
@@ -766,21 +981,20 @@
 
         function navbarChange(item) {
 
-            var prev = document.getElementsByClassName("active");
-            const posanterior = prev[0].parentNode.id - 1;
-            prev[0].classList.remove("active");
+        var prev = document.getElementsByClassName("active");
+        const posanterior = prev[0].parentNode.id - 1;
+        prev[0].classList.remove("active");
 
 
-            item.getElementsByTagName("A")[0].className = "nav-link active";
+        item.getElementsByTagName("A")[0].className = "nav-link active";
 
-            
-            var card = document.getElementsByClassName("nav-card");
-            console.log(card[item.id - 1]);
-            card[posanterior].classList.add("d-md-none")
-            card[item.id - 1].classList.remove("d-md-none");
-            console.log(card[item.id - 1]);
+
+        var card = document.getElementsByClassName("nav-card");
+        card[posanterior].classList.add("d-md-none")
+        card[item.id - 1].classList.remove("d-md-none");
+       
         }
-    </script>
+        </script>
 
 </body>
 

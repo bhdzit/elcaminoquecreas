@@ -3,6 +3,18 @@ body {
     padding: 0px;
 }
 
+.svg-menu{
+    width: 7%;
+    margin-right: 15px;
+}
+
+
+.shape{
+    margin-top: 20px;
+    shape-outside: polygon(-71px 22px, 54px 23px, 96px -28px, 144px 22px, 696px 23px, 697px 342px, -68px 347px);
+    clip-path: polygon(-71px 22px, 54px 22px, 96px 1px, 144px 22px, 696px 22px, 697px 645px, -68px 645px);
+  
+}
 .navbar-area {
     position: absolute;
     margin: 10px;
@@ -126,9 +138,37 @@ body {
 .social a{
     font-size: unset !important;
 }
+.nav-pills .nav-link.active{
+    font-weight: bold !important;
+    background: unset;
+}
+.card-item-a{
+    padding: 8px  !important;
+    font-size: 18px !important;
+    cursor: pointer;
+    
+}
+
+.bg-fade{
+    background: linear-gradient(180deg, rgba(94, 125, 212, 0.65), rgba(157, 168, 222, 0.65))  !important;
+
+}
+.dropdown-menu .dropdown-menu{
+    top:-75px !important;
+}
+nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
+    background-color: unset !important;
+}
+
+.movil-nav{
+border: unset;
+
+
+}
 @media (max-width: 767px){
     .navbar-area .navbar .navbar-collapse{
         color: #fff;
        
     }
 }
+

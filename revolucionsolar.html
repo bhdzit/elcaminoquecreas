@@ -335,23 +335,77 @@
                     vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
                     sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
             </div>
-            <div class="row justify-content-center mt-5 mr-5 ml-5 mb-5 pb-5">
+            <div class="row justify-content-center mt-5 mr-5 ml-5 mb-5 pb-5" style="min-height: 29vw;">
 
-                <div class="col-3 p-0">
-                    <img class="product-img-info" src="assets/images/bg10.png">
+                <div class="col-12 col-sm-3 p-0">
+                    <div class="carta-box">
+                        <div class="carta">
+                            <div class="cara">
+                                <img class="product-img-info" src="assets/images/bg10.png">
+                            </div>
+                            <div class="cara detras w-100  contenedor-back">
+                                <div class="w-100 h-100 bg-white">
+                                    <h4 class="text-center pt-150">próximamente
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-3 p-0">
-                    <img class="product-img-info" src="assets/images/bg11.png">
+                <div class="col-12 col-sm-3 p-0">
+                    <div class="carta-box">
+                        <div class="carta">
+                            <div class="cara">
+                                <img  class="product-img-info" src="assets/images/bg11.png">
+                            </div>
+                            <div class="cara detras w-100  contenedor-back">
+                                <div class="w-100 h-100 bg-white">
+                                    <h4 class="text-center pt-150">próximamente
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-3 p-0">
-                    <img class="product-img-info" src="assets/images/bg12.png">
+
+                <div class="col-12 col-sm-3 p-0">
+                    <div class="carta-box">
+                        <div class="carta">
+                            <div class="cara">
+                                <img  class="product-img-info" src="assets/images/bg12.png">
+                            </div>
+                            <div class="cara detras w-100  contenedor-back">
+                                <div class="w-100 h-100 bg-white">
+                                    <h4 class="text-center pt-150">próximamente
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-3 p-0">
-                    <img class="product-img-info" src="assets/images/bg13.png">
+
+                <div class="col-12 col-sm-3 p-0">
+                    <div class="carta-box">
+                        <div class="carta">
+                            <div class="cara">
+                                <img  class="product-img-info" src="assets/images/bg13.png">
+                            </div>
+                            <div class="cara detras w-100  contenedor-back">
+                                <div class="w-100 h-100 bg-white">
+                                    <h4 class="text-center pt-150">próximamente
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+
+
+
 
             </div>
         </div>
@@ -453,20 +507,23 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-        let cards = $('.card');
+        let cards = document.getElementsByClassName('carta-box');
 
         for (let i = 0; i < cards.length; i++) {
-            $(cards[i]).on('show.bs.collapse', function (e) {
-                cards[i].querySelector("i").className = "fas fa-minus"; // alert("asdsd");<i class=""></i>fas fa-minus
 
-            });
+            cards[i].onmouseover = function (e) {
+                console.log(cards[i].style);
+                cards[i].querySelector("img").style.display = "none"
+            };
+            cards[i].onmouseout = function (e) {
+                cards[i].querySelector("img").style.display = "unset"
+            };
 
-            $(cards[i]).on('hide.bs.collapse', function (e) {
-                cards[i].querySelector("i").className = "fas fa-plus";
 
-            });
+
 
         }
+
 
 
 

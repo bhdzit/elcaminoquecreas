@@ -170,53 +170,115 @@ nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
     border-radius: 50px;
     width: 75%;
 }
+
 .btn-gmail-login {
-    background: linear-gradient(180deg, rgb(94,125,212), rgb(157, 168, 222));
+    background: linear-gradient(180deg, rgb(94, 125, 212), rgb(157, 168, 222));
     color: white;
     border: unset;
     border-radius: 50px;
     width: 75%;
 }
 
-
-input[type=checkbox]
-{
+input[type=checkbox] {
     transform: scale(1.5);
 }
 
-
-input[type=checkbox]:checked
-{
+input[type=checkbox]:checked {
     transform: scale(1.5);
     filter: invert(100%) hue-rotate(208deg) brightness(1);
 }
 
-
-.login-link{
+.login-link {
     color: #6884D6 !important;
-
 }
-.login-link:hover{
+
+.login-link:hover {
     color: #696f81 !important;
     cursor: pointer;
 }
 
-.product-img-info{
+.product-img-info {
     display: block;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     padding-top: 17%;
     transition: 0.5s;
 }
-.product-img-info:hover{
-    padding-left: unset;
+
+.product-img-inf:hover {
+     padding-left: unset;
     padding-right: unset;
     padding-top: unset;
     cursor: pointer;
   
+  transform: rotateY(180deg);
 }
+
+/*
+Inicio de giro de Cartas
+*/
+
+.carta-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  
+  .carta-box:hover .carta {
+      transform: rotateY(180deg);
+  }
+  
+  .carta {
+    transform-style: preserve-3d;
+    transition: all 0.5s linear;
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+  .cara {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+  }
+  
+  .cara.detras {
+    transform: rotateY(180deg);
+  }
+
+ .contenedor-back {
+    display: block;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 17%;
+}
+
+/*  fin de Giro de Cartas*/
+ 
+
 @media (max-width: 767px) {
     .navbar-area .navbar .navbar-collapse {
         color: #fff;
     }
-}
+    .cara {
+        height: unset;
+        position: unset;
+        backface-visibility: unset;
+    }
+    .cara.detras {
+        transform: unset;
+    }
+    .contenedor-back {
+        padding-top: unset;
+    }
+    .detras h4{
+        padding-top: unset;
+    }
+    .product-img-info{
+        background: white;
+    }
+} 

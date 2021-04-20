@@ -206,12 +206,11 @@ input[type=checkbox]:checked {
 }
 
 .product-img-inf:hover {
-     padding-left: unset;
+    padding-left: unset;
     padding-right: unset;
     padding-top: unset;
     cursor: pointer;
-  
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 /*
@@ -224,41 +223,92 @@ Inicio de giro de Cartas
     position: relative;
     perspective: 1000px;
     cursor: pointer;
-  }
-  
-  .carta-box:hover .carta {
-      transform: rotateY(180deg);
-  }
-  
-  .carta {
+}
+
+.carta-box:hover .carta {
+    transform: rotateY(180deg);
+}
+
+.carta {
     transform-style: preserve-3d;
     transition: all 0.5s linear;
     width: 100%;
     height: 100%;
-    
-  }
-  
-  .cara {
+}
+
+.cara {
     width: 100%;
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
     padding: 1.5rem 1.5rem 0 1.5rem;
-  }
-  
-  .cara.detras {
-    transform: rotateY(180deg);
-  }
+}
 
- .contenedor-back {
+.cara.detras {
+    transform: rotateY(180deg);
+}
+
+.contenedor-back {
     display: block;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     padding-top: 17%;
 }
 
+.nav-logo {
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    width: 50%;
+}
+
+.check-logo {
+    color: white;
+    padding: 14px;
+    border-radius: 50px;
+    border: 2px solid white;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-check:checked+.check-logo {
+    background: white;
+    padding: 14px;
+    border-radius: 50px;
+    color: #6884D6 !important;
+    border-color: #6884D6 !important;
+    
+}
+
+.select-camino {
+    padding-left: 50px;
+    width: 100%;
+    border-radius: 50px;
+    background: unset;
+    color: #ffffff5e;
+    border: 3px solid #ffffff5e;
+    
+    font-size: x-large;
+}
+.btn-white-MediumPurple{
+    background: white;
+    color: mediumpurple;
+    width: 100%;
+    border: 2px solid mediumpurple;
+    border-radius: 50px;
+    font-size: x-large;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+
+
 /*  fin de Giro de Cartas*/
- 
 
 @media (max-width: 767px) {
     .navbar-area .navbar .navbar-collapse {
@@ -275,10 +325,12 @@ Inicio de giro de Cartas
     .contenedor-back {
         padding-top: unset;
     }
-    .detras h4{
+    .detras h4 {
         padding-top: unset;
     }
-    .product-img-info{
+    .product-img-info {
         background: white;
     }
-} 
+  
+}
+

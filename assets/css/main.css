@@ -279,7 +279,6 @@ Inicio de giro de Cartas
     border-radius: 50px;
     color: #6884D6 !important;
     border-color: #6884D6 !important;
-    
 }
 
 .select-camino {
@@ -289,10 +288,10 @@ Inicio de giro de Cartas
     background: unset;
     color: #ffffff5e;
     border: 3px solid #ffffff5e;
-    
     font-size: x-large;
 }
-.btn-white-MediumPurple{
+
+.btn-white-MediumPurple {
     background: white;
     color: mediumpurple;
     width: 100%;
@@ -303,7 +302,8 @@ Inicio de giro de Cartas
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.btn-MediumPurple{
+
+.btn-MediumPurple {
     background: unset;
     color: white;
     width: 100%;
@@ -315,9 +315,112 @@ Inicio de giro de Cartas
     padding-bottom: 10px;
 }
 
+.home-card {
+    background: #ffffffd1;
+    border-radius: 50px;
+    padding: 50px 20px;
+}
 
+.card-table {
+    background: white;
+    border-radius: 50px;
+    padding: 20px 50px 10px 50px;
+}
+.rounded-5{
+    border-radius: 30px;
+}
 
+tbody, td, tfoot, th, thead, tr {
+    border: unset;
+}
 
+th {
+    color: #00000087;
+}
+
+td button {
+    border: unset;
+    background: unset;
+    color: #46CEFC;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+td i {
+    background: #e6e6e687;
+    color: #00000087;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.btn-white{
+    display: block;
+    border: unset;
+    background: white;
+    color: mediumpurple;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: x-large;
+}
+.btn-blue{
+    display: block;
+    border: unset;
+    background:#46CEFC;
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: x-large;
+}
+.btn-white-purple{
+    display: block;
+    border: unset;
+    background:#6884D6;
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: x-large;
+}
+.swal2-show {
+    overflow-x:auto;
+    width: 600px;
+    border-radius: 25px;
+
+}
+.swal2-show input,.swal2-show select{
+    border-radius: 50px;
+    border: 2px solid #00000087;
+    margin-top: 10px;
+    font-size: x-large;
+}
+.swal2-show input[type="date"]{
+
+    width: 45%;
+    font-size: 1.2em;
+    padding: 5px;
+    margin-right: 5%;
+}
+
+.swal2-show input[type="time"]{
+
+    width: 45%;
+    font-size: 1.2em;
+    padding: 5px;
+    margin-left: 5%;
+}
+.swal2-actions button {
+    display: block ;
+    border: unset !important;
+    background-color:#6884D6 !important;
+    color: white !important;
+    border-radius: 50px !important;
+    width: 50%;
+    padding: 0;
+    font-size: 1.8em !important;
+    text-align: center;
+}
 /*  fin de Giro de Cartas*/
 
 @media (max-width: 767px) {
@@ -341,6 +444,8 @@ Inicio de giro de Cartas
     .product-img-info {
         background: white;
     }
-  
+    .ml-100{
+        margin: unset;
+    }
+    
 }
-

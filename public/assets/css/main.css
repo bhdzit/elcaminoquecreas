@@ -1,0 +1,453 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.svg-menu {
+    width: 7%;
+    margin-right: 15px;
+}
+
+.shape {
+    margin-top: 20px;
+    shape-outside: polygon(-71px 22px, 54px 23px, 96px -28px, 144px 22px, 696px 23px, 697px 342px, -68px 347px);
+    clip-path: polygon(-71px 22px, 54px 22px, 96px 1px, 144px 22px, 696px 22px, 697px 645px, -68px 645px);
+}
+
+.navbar-area {
+    position: absolute;
+    margin: 10px;
+    width: 99%;
+    border-radius: 50px;
+    background: linear-gradient(180deg, rgba(94, 125, 212, 0.65), rgba(157, 168, 222, 0.65));
+}
+
+.navbar-area .navbar .navbar-nav .nav-item a {
+    font-size: 22px;
+    font-weight: unset;
+    text-transform: unset;
+    opacity: unset;
+}
+
+[type=search] {
+    border: unset;
+    border-bottom: 2px solid #fff;
+    background: border-box;
+    color: white;
+}
+
+[type=search]::placeholder {
+    color: white;
+}
+
+.scrollbar-night-fade::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+.scrollbar-night-fade::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.scrollbar-night-fade::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#a18cd1), to(#fbc2eb));
+    background-image: -webkit-linear-gradient(bottom, #a18cd1 0%, #fbc2eb 100%);
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+
+.scrollbar-night-fade {
+    scrollbar-color: #a18cd1 #F5F5F5;
+}
+
+.btn-night-fade {
+    border: unset;
+    margin-top: 60px;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+
+.centrado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+}
+
+.card-hide {
+    display: none;
+}
+
+.nav-link {
+    opacity: 0.5;
+    margin: 0px 10px 0px 10px;
+}
+
+.nav-item .active {
+    opacity: unset;
+}
+
+.nav-bar {
+    border-bottom: 1px solid #000;
+    opacity: 0.2;
+    margin: 0px 100px;
+}
+
+.card-header i {
+    float: right;
+    color: #a18cd1;
+    cursor: pointer;
+}
+
+.btn-fade {
+    border-radius: 50px;
+    color: #a18cd1;
+    font-size: 1.5vw;
+    width: 50%;
+    ;
+    font-weight: bold;
+    border: 2px solid #a18cd1;
+}
+
+.btn-ountline-fade {
+    border-radius: 0px 50px 50px 0;
+    background: #a18cd1;
+    color: white;
+    border: unset;
+    font-size: 2vw;
+}
+
+.social li {
+    opacity: 0.65;
+}
+
+.social i {
+    color: #a18cd1;
+    opacity: unset;
+}
+
+.social a {
+    font-size: unset !important;
+}
+
+.nav-pills .nav-link.active {
+    font-weight: bold !important;
+    background: unset;
+}
+
+.card-item-a {
+    padding: 8px !important;
+    font-size: 18px !important;
+    cursor: pointer;
+}
+
+.bg-fade {
+    background: linear-gradient(180deg, rgba(94, 125, 212, 0.65), rgba(157, 168, 222, 0.65)) !important;
+}
+
+.dropdown-menu .dropdown-menu {
+    top: -75px !important;
+}
+
+nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+    background-color: unset !important;
+}
+
+.movil-nav {
+    border: unset;
+}
+
+.btn-facebook-login {
+    background: linear-gradient(180deg, rgb(51, 70, 156), rgb(39, 35, 35));
+    color: white;
+    border: unset;
+    border-radius: 50px;
+    width: 75%;
+}
+
+.btn-gmail-login {
+    background: linear-gradient(180deg, rgb(94, 125, 212), rgb(157, 168, 222));
+    color: white;
+    border: unset;
+    border-radius: 50px;
+    width: 75%;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+input[type=checkbox]:checked {
+    transform: scale(1.5);
+    filter: invert(100%) hue-rotate(208deg) brightness(1);
+}
+
+.login-link {
+    color: #6884D6 !important;
+}
+
+.login-link:hover {
+    color: #696f81 !important;
+    cursor: pointer;
+}
+
+.product-img-info {
+    display: block;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 17%;
+    transition: 0.5s;
+}
+
+.product-img-inf:hover {
+    padding-left: unset;
+    padding-right: unset;
+    padding-top: unset;
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+
+/*
+Inicio de giro de Cartas
+*/
+
+.carta-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.carta-box:hover .carta {
+    transform: rotateY(180deg);
+}
+
+.carta {
+    transform-style: preserve-3d;
+    transition: all 0.5s linear;
+    width: 100%;
+    height: 100%;
+}
+
+.cara {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.cara.detras {
+    transform: rotateY(180deg);
+}
+
+.contenedor-back {
+    display: block;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 17%;
+}
+
+.nav-logo {
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    width: 50%;
+}
+
+.check-logo {
+    color: white;
+    padding: 14px;
+    border-radius: 50px;
+    border: 2px solid white;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-check:checked+.check-logo {
+    background: white;
+    padding: 14px;
+    border-radius: 50px;
+    color: #6884D6 !important;
+    border-color: #6884D6 !important;
+}
+
+.select-camino {
+    padding-left: 50px;
+    width: 100%;
+    border-radius: 50px;
+    background: unset;
+    color: #ffffff5e;
+    border: 3px solid #ffffff5e;
+    font-size: x-large;
+}
+
+.btn-white-MediumPurple {
+    background: white;
+    color: mediumpurple;
+    width: 100%;
+    border: 2px solid mediumpurple;
+    border-radius: 50px;
+    font-size: x-large;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn-MediumPurple {
+    background: unset;
+    color: white;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 50px;
+    font-size: x-large;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.home-card {
+    background: #ffffffd1;
+    border-radius: 50px;
+    padding: 50px 20px;
+}
+
+.card-table {
+    background: white;
+    border-radius: 50px;
+    padding: 20px 50px 10px 50px;
+}
+.rounded-5{
+    border-radius: 30px;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border: unset;
+}
+
+th {
+    color: #00000087;
+}
+
+td button {
+    border: unset;
+    background: unset;
+    color: #46CEFC;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+td i {
+    background: #e6e6e687;
+    color: #00000087;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.btn-white{
+    display: block;
+    border: unset;
+    background: white;
+    color: mediumpurple;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: x-large;
+}
+.btn-blue{
+    display: block;
+    border: unset;
+    background:#46CEFC;
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: x-large;
+}
+.btn-white-purple{
+    display: block;
+    border: unset;
+    background:#6884D6;
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: x-large;
+}
+.swal2-show {
+    overflow-x:auto;
+    width: 600px;
+    border-radius: 25px;
+
+}
+.swal2-show input,.swal2-show select{
+    border-radius: 50px;
+    border: 2px solid #00000087;
+    margin-top: 10px;
+    font-size: x-large;
+}
+.swal2-show input[type="date"]{
+
+    width: 45%;
+    font-size: 1.2em;
+    padding: 5px;
+    margin-right: 5%;
+}
+
+.swal2-show input[type="time"]{
+
+    width: 45%;
+    font-size: 1.2em;
+    padding: 5px;
+    margin-left: 5%;
+}
+.swal2-actions button {
+    display: block ;
+    border: unset !important;
+    background-color:#6884D6 !important;
+    color: white !important;
+    border-radius: 50px !important;
+    width: 50%;
+    padding: 0;
+    font-size: 1.8em !important;
+    text-align: center;
+}
+/*  fin de Giro de Cartas*/
+
+@media (max-width: 767px) {
+    .navbar-area .navbar .navbar-collapse {
+        color: #fff;
+    }
+    .cara {
+        height: unset;
+        position: unset;
+        backface-visibility: unset;
+    }
+    .cara.detras {
+        transform: unset;
+    }
+    .contenedor-back {
+        padding-top: unset;
+    }
+    .detras h4 {
+        padding-top: unset;
+    }
+    .product-img-info {
+        background: white;
+    }
+    .ml-100{
+        margin: unset;
+    }
+    
+}

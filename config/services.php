@@ -29,5 +29,19 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'facebook' => [
+        'client_id' => '302355128190500',
+        'client_secret' => 'ba3ce0086782f040f8301e6696e17552',
+        'redirect' => './auth/facebook/callback'
+    ],
+
+    'google' => [
+        'client_id' => '328999037814-f7qlfh46v773rkh78p16g8sgmkikndv5.apps.googleusercontent.com',
+        'client_secret' => '1H13YkUzwABODqU27FCYe--6',
+        'redirect' => 'http://localhost/auth/google/callback'
+    ]
+
+
+
 
 ];

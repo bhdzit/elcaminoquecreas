@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\SocialAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,6 @@ Route::get('/', function () {
 });
 Route::get('/revolucionsolar', function () {
     return view('revolucionsolar');
-
 });
 
 Route::get('/revolucionlunar', function () {
@@ -29,6 +29,9 @@ Route::get('/primordial', function () {
     return view('primordial');
 });
 
+Route::get('primordialciudad',function(){
+return view('primordialciudad');
+});
 Route::get('/previstadeinforme', function () {
     return view('previstadeinforme');
 });
@@ -48,4 +51,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::get('auth/{provider}', [SocialAuthController::class, 'redirectToProvider'])->name('social.auth');
+Route::get('auth/{provider}/callback',  [SocialAuthController::class, 'handleProviderCallback']);
+
+require __DIR__ . '/auth.php';

@@ -14,10 +14,10 @@
                 <div class="col-12 col-md-5   text-center bg-white m-0 p-5 justify-content-center">
                     <h4 class="mb-3  font-weight-bold">Ingresar</h4>
                     <p class="mb-3 text-black-50">Ingresa con tus redes sociales</p>
-                    <button class="btn btn-facebook-login mb-2 p-2"><i class="fab fa-facebook-f mr-2"></i> INGRESAR CON
-                        FACEBOOK</button>
-                    <button class="btn btn-gmail-login p-2"><i class="fab fa-google-plus-g  mr-2"></i> INGRESAR CON
-                        GOOGLE</button>
+                    <a href="{{ route('social.auth', 'facebook') }}" class="btn btn-facebook-login mb-2 p-2"><i class="fab fa-facebook-f mr-2"></i> INGRESAR CON
+                        FACEBOOK</a>
+                    <a href="{{ route('social.auth', 'google') }}" class="btn btn-gmail-login p-2"><i class="fab fa-google-plus-g  mr-2"></i> INGRESAR CON
+                        GOOGLE</a>
                     <p class="mb-3 text-black-50">o</p>
 
                     <input type="email" class="form-control mb-4" placeholder="Correo electrónico" name="email" value="{{old('email')}}">

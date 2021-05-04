@@ -74,7 +74,7 @@
         <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
 
-                <div class="collapse navbar-collapse sub-menu-bar col-12 col-md-5" id="navbarTwo">
+                <div class="col-md-5" id="navbarTwo">
                     <ul class="navbar-nav ">
                         <li class="nav-item float-left">
                             <a class="navbar-caption " href="/"><i class="fas fa-home"></i> Inicio</a>
@@ -279,7 +279,7 @@
                     <img src="assets/images/logo.png" width="50%" sizes="220px" style="margin-right: auto; margin-left: auto; display: block;">
                 </div>
 
-                <div class="collapse navbar-collapse sub-menu-bar d-none row justify-content-center" id="navbarTwo">
+                <div class="col-5 justify-content-center" id="navbarTwo">
                     <ul class="navbar-nav m-auto">
 
                         <li class="nav-item"><input type="search" class="searchinput" placeholder="Buscar"><i class="fas fa-search fa-lg text-white"></i></li>
@@ -414,7 +414,7 @@
     <script>
 
     </script>
-
+@yield('script')
 </body>
 
 </html>

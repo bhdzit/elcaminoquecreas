@@ -27,6 +27,7 @@ body {
     font-weight: unset;
     text-transform: unset;
     opacity: unset;
+    text-decoration: unset;
 }
 
 [type=search] {
@@ -422,6 +423,10 @@ td i {
     padding: 0;
     font-size: 1.8em !important;
     text-align: center;
+}
+
+.swal2-content{
+    padding: unset !important;
 }
 /*  fin de Giro de Cartas*/
 

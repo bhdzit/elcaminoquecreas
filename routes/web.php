@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\SocialAuthController;
+use App\Http\Controllers\InicioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,10 +42,8 @@ Route::get('/informe', function () {
     return view('informe');
 });
 
+Route::resource('/inicio', InicioController::class)->middleware('auth');
 
-Route::get('/inicio', function () {
-    return view('inicio');
-});
 
 
 Route::get('/dashboard', function () {

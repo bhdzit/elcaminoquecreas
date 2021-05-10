@@ -456,3 +456,10 @@ td i {
     }
     
 }
+.text-red-600{
+    color: red;
+    font-size: 1rem;
+    background: #ffffff;
+    border-radius: 50px;
+    border: 3px solid #9370db;
+}

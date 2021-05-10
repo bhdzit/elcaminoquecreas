@@ -11,27 +11,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="assets/images/logo.png" type="image/png">
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/png">
 
     <!--====== Magnific Popup CSS ======-->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css">
 
     <!--====== Slick CSS ======-->
-    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="../assets/css/slick.css">
 
     <!--====== Line Icons CSS ======-->
-    <link rel="stylesheet" href="assets/css/LineIcons.css">
+    <link rel="stylesheet" href="../assets/css/LineIcons.css">
 
-       <!--====== Bootstrap CSS ======-->
-       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!--====== Bootstrap CSS ======-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
     <!--====== Default CSS ======-->
-    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="../assets/css/default.css">
 
     <!--====== Style CSS ======-->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
@@ -114,56 +113,57 @@
                                         <div class="col-7">
                                             <div class="card-body nav-card ">
                                                 <ul class="nav flex-column ">
-                                                    <li class="nav-item"><a class="nav-link"><img class="svg-menu" src="assets/svg/moon-star.svg"> Arco de Casa II</a>
+                                                    <li class="nav-item"><a href="{{ route('informe', 'primordial solar') }}" class="nav-link"><img class="svg-menu" src="../assets/svg/moon-star.svg">PRIMORDIAL</a></li>
+                                                    <!-- <li class="nav-item"><a class="nav-link"><img class="svg-menu" src="../assets/svg/moon-star.svg"> Arco de Casa II</a>
                                                     </li>
-                                                    <li class="nav-item"><a class="nav-link"><img class="svg-menu" src="assets/svg/galaxy1.svg"> Regentes I</a></li>
-                                                    <li class="nav-item"><a class="nav-link"><img class="svg-menu" src="assets/svg/commet.svg"> Regentes II</a></li>
-                                                    <li class="nav-item"><a class="nav-link"><img class="svg-menu" src="assets/svg/galaxy2.svg"> Cuspides</a></li>
+                                                    <li class="nav-item"><a class="nav-link"><img class="svg-menu" src="../assets/svg/galaxy1.svg"> Regentes I</a></li>
+                                                    <li class="nav-item"><a class="nav-link"><img class="svg-menu" src="../assets/svg/commet.svg"> Regentes II</a></li>
+                                                    <li class="nav-item"><a class="nav-link"><img class="svg-menu" src="../assets/svg/galaxy2.svg"> Cuspides</a></li>-->
                                                 </ul>
 
                                             </div>
 
                                             <div class="card-body nav-card d-md-none">
                                                 <ul class="nav flex-column ">
-                                                    <li class="nav-item"><a class="nav-link">Arco </a></li>
+                                                    <!--                                                    <li class="nav-item"><a class="nav-link">Arco </a></li>
                                                     <li class="nav-item"><a class="nav-link">Regentes I</a></li>
                                                     <li class="nav-item"><a class="nav-link">Regentes II</a></li>
-                                                    <li class="nav-item"><a class="nav-link">Cuspides</a></li>
+                                                    <li class="nav-item"><a class="nav-link">Cuspides</a></li>-->
                                                 </ul>
                                             </div>
 
                                             <div class="card-body nav-card d-md-none">
                                                 <ul class="nav flex-column ">
-                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="assets/svg/moon-star.svg">
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="../assets/svg/moon-star.svg">
                                                             Comportamiento</a></li>
-                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="assets/svg/galaxy1.svg">
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="../assets/svg/galaxy1.svg">
                                                             Informe
                                                             Harrington</a></li>
-                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="assets/svg/commet.svg">
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="../assets/svg/commet.svg">
                                                             Informe
                                                             Waldemath Lilith</a></li>
-                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="assets/svg/galaxy2.svg">
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="../assets/svg/galaxy2.svg">
                                                             Informe
                                                             Lilith</a></li>
-                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="assets/svg/moon-star.svg">
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="../assets/svg/moon-star.svg">
                                                             Informe
                                                             Marte</a></li>
-                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="assets/svg/galaxy1.svg">
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="../assets/svg/galaxy1.svg">
                                                             Informe
                                                             Venus</a></li>
-                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="assets/svg/commet.svg">
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="../assets/svg/commet.svg">
                                                             Informe
                                                             Academia</a></li>
-                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="assets/svg/galaxy2.svg">
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"><img class="svg-menu" src="../assets/svg/galaxy2.svg">
                                                             Informe
                                                             Urania</a></li>
-                                                    <li class="nav-item  "><a class="nav-link card-item-a"> <img class="svg-menu" src="assets/svg/moon-star.svg">
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"> <img class="svg-menu" src="../assets/svg/moon-star.svg">
                                                             Informe
                                                             Leverrier</a></li>
-                                                    <li class="nav-item  "><a class="nav-link card-item-a"> <img class="svg-menu" src="assets/svg/galaxy1.svg">
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"> <img class="svg-menu" src="../assets/svg/galaxy1.svg">
                                                             Informe
                                                             Represión Infantil</a></li>
-                                                    <li class="nav-item  "><a class="nav-link card-item-a"> <img class="svg-menu" src="assets/svg/commet.svg">
+                                                    <li class="nav-item  "><a class="nav-link card-item-a"> <img class="svg-menu" src="../assets/svg/commet.svg">
                                                             Informe
                                                             Pluton</a></li>
                                                 </ul>
@@ -276,7 +276,7 @@
                 </button>
 
                 <div class="d-none d-sm-none d-md-block col-md-2 justify-content-center">
-                    <img src="assets/images/logo.png" width="50%" sizes="220px" style="margin-right: auto; margin-left: auto; display: block;">
+                    <img src="../assets/images/logo.png" width="50%" sizes="220px" style="margin-right: auto; margin-left: auto; display: block;">
                 </div>
 
                 <div class="col-5 justify-content-center" id="navbarTwo">
@@ -384,37 +384,37 @@
 
 
     <!--====== Jquery js ======-->
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/vendor/modernizr-3.7.1.min.js"></script>
 
     <!--====== Bootstrap js ======-->
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
 
     <!--====== Slick js ======-->
-    <script src="assets/js/slick.min.js"></script>
+    <script src="../assets/js/slick.min.js"></script>
 
     <!--====== Magnific Popup js ======-->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="../assets/js/jquery.magnific-popup.min.js"></script>
 
     <!--====== Ajax Contact js ======-->
-    <script src="assets/js/ajax-contact.js"></script>
+    <script src="../assets/js/ajax-contact.js"></script>
 
     <!--====== Isotope js ======-->
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/js/isotope.pkgd.min.js"></script>
 
     <!--====== Scrolling Nav js ======-->
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/scrolling-nav.js"></script>
+    <script src="../assets/js/jquery.easing.min.js"></script>
+    <script src="../assets/js/scrolling-nav.js"></script>
 
     <!--====== Main js ======-->
-    <script src="assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 
     <script>
 
     </script>
-@yield('script')
+    @yield('script')
 </body>
 
 </html>

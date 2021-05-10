@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Informe;
 use App\Models\Persona;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class InicioController extends Controller
      */
     public function index()
     {
-        return view('inicio',['personas'=>Persona::where('pa_us','=',auth()->id())->get()]);
+        return view('inicio',['personas'=>Persona::where('pa_us','=',auth()->id())->get(),
+        'informes'=>Informe::where('in_us','=',auth()->id())->get()]);
     }
 
     /**

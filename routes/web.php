@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\Auth\SocialAuthController;
+use App\Http\Controllers\InformeController;
 use App\Http\Controllers\InicioController;
+use App\Models\Persona;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,19 +29,16 @@ Route::get('/revolucionlunar', function () {
     return view('revolucionlunar');
 });
 
-Route::get('/primordial', function () {
-    return view('primordial');
-});
+Route::post('informe{informe}ciudad',[InformeController::class,'selecionarCiudadDeInforme']);
+Route::post('generarinforme',[InformeController::class,'generarInforme']);
 
-Route::get('primordialciudad',function(){
-return view('primordialciudad');
-});
-Route::get('/previstadeinforme', function () {
-    return view('previstadeinforme');
-});
+Route::get('/informe{primordial}', [InformeController::class,'selecionarAquinVaDirigidofunction'])->name("informe");
 
 
-Route::get('/informe', function () {
+Route::get('/previstadeinforme/{informe}', [InformeController::class,'verinforme'])->name("previstadeinforme");
+
+
+Route::get('/verinforme/{id}', function () {
     return view('informe');
 });
 

@@ -40,10 +40,10 @@
                                     <form action="{{ url('inicio/'.$persona->pa_id) }}" method="POST" class="d-inline">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
-                                        <button type="submit" ><i class="fas fa-times"></i></button>
+                                        <button type="submit"><i class="fas fa-times"></i></button>
                                     </form>
-                                    
-                                  
+
+
                                 </td>
                             </tr>
                             @empty
@@ -71,27 +71,21 @@
                     <button class="col-12 col-md-7 btn-white-purple">Modificar datos personales</button>
                 </div>
                 <p class="text-center mt-5 mb-4"><strong>ÚLTIMOS INFORMES REALIZADOS</strong></p>
+                @forelse($informes as $informe)
                 <div class=" row bg-white p-4 rounded-5 mb-4 ml-100">
                     <div class="col-3">
                         <img src="assets/images/bg14.png">
                     </div>
                     <div class="col-9">
-                        <p class="text-secondary mb-3">Revolucion Lunar - PRIMORDIAL </p>
+                        <p class="text-secondary mb-3">{{$informe->in_nombre}}</p>
                         <p class="text-secondary mb-3">MARIA CLARA </p>
                         <p class="text-secondary ">Tipo : <label class="text-success">Completo</label></p>
                     </div>
                 </div>
+                @empty
+                <p class="text-center">No hay infromes recientes</p>
+                @endforelse
 
-                <div class=" row bg-white p-4 rounded-5 ml-100">
-                    <div class="col-3">
-                        <img src="assets/images/bg14.png">
-                    </div>
-                    <div class="col-9">
-                        <p class="text-secondary mb-3">Revolucion Lunar - PRIMORDIAL </p>
-                        <p class="text-secondary mb-3">MARIA CLARA </p>
-                        <p class="text-secondary ">Tipo : <label class="text-danger">Parcial</label></p>
-                    </div>
-                </div>
             </div>
 
 
@@ -101,19 +95,17 @@
 @endsection
 @section('script')
 <script>
- 
     document.getElementById("addPersona").addEventListener("click", function() {
         let token = '{{ csrf_field() }}';
         let ruta = "{{route('inicio.store')}}";
         agregarPersona(token, ruta);
     });
 
-    function editclick(data){
+    function editclick(data) {
         let token = '{{ csrf_field() }}';
         let ruta = "{{url('inicio/')}}";
-        ruta+="/"+data.pa_id;
-        editarPersona(token,ruta,data);
+        ruta += "/" + data.pa_id;
+        editarPersona(token, ruta, data);
     }
 </script>
-{{ method_field("PATCH") }}
 @endsection

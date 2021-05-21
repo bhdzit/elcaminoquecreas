@@ -47,7 +47,7 @@
 
     <!--====== PRELOADER PART START ======-->
 
-    <div class="preloader">
+    <div id="preloader" class="preloader">
         <div class="loader">
             <div class="ytp-spinner">
                 <div class="ytp-spinner-container">
@@ -61,7 +61,9 @@
                     </div>
                 </div>
             </div>
+     
         </div>
+
     </div>
 
     <!--====== PRELOADER PART ENDS ======-->
@@ -410,10 +412,6 @@
 
     <!--====== Main js ======-->
     <script src="../assets/js/main.js"></script>
-
-    <script>
-
-    </script>
     @yield('script')
 </body>
 

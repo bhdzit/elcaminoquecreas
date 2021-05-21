@@ -42,8 +42,6 @@
                                         {{ method_field('DELETE') }}
                                         <button type="submit"><i class="fas fa-times"></i></button>
                                     </form>
-
-
                                 </td>
                             </tr>
                             @empty

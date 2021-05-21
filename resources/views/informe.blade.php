@@ -75,7 +75,6 @@
 @section('script')
 <script>
     function idDePersonaSelecionada(persona) {
-
         let lista = document.getElementById("personas");
         for (let i = 0; i < lista.children.length; i++) {
            if(lista.children[i].value==persona.value){

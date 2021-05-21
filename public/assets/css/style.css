@@ -121,6 +121,21 @@ p {
   margin-top: 24px; }
 
 /*===== All Preloader Style =====*/
+
+
+.preloader {
+  /* Body Overlay */
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: table;
+  height: 100%;
+  width: 100%;
+  /* Change Background Color */
+  background: #fff;
+  z-index: 99999; }
+
+
 .preloader {
   /* Body Overlay */
   position: fixed;

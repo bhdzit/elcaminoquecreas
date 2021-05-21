@@ -43,7 +43,7 @@ class InformeController extends Controller
             $informe->in_tipo = true;
         } else {
             $informe->in_tipo = false;
-        }
+        }  
 
 
         $informe->in_date = request("date");
@@ -51,40 +51,10 @@ class InformeController extends Controller
         $informe->save();
         return redirect()->route('previstadeinforme', $informe->in_id);
     }
-
-
-
-    public function verinforme($id)
-    {
-
-        $array = [
-            "N4", "N5", "N6", "N7", "N8", "N9", "N10", "N11", "N12"
-        ];
-
-        $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
-        $reader->setLoadSheetsOnly(["Sheet 1", "Informe de Revolución"]);
-        $spreadsheet = $reader->load("PrimordialRSyRLparaenviar2.xlsx");
-        for ($i = 0; $i < count($array); $i++) {
-            echo ($spreadsheet->getActiveSheet()->getCell($array[$i])) . "<p>";
-        }
-
-
-
-/*BuscarReemplazar "[NombreyApellidosdelapersona]", ActiveSheet.Range("Z4")
-BuscarReemplazar "[Fechadenacimiento]", ActiveSheet.Range("AB4")
-BuscarReemplazar "[Lugardenacimiento]", ActiveSheet.Range("AC4")
-BuscarReemplazar "[Lugardelarevolucionlunar]", ActiveSheet.Range("AH4")
-BuscarReemplazar "[FechadeInicio]", ActiveSheet.Range("AE4")
-BuscarReemplazar "[FechaFinal]", ActiveSheet.Range("AF4")
-
-BuscarReemplazar "[1A]", ActiveSheet.Range("N4")
-BuscarReemplazar "[2A]", ActiveSheet.Range("N5")
-BuscarReemplazar "[3A]", ActiveSheet.Range("N6")
-BuscarReemplazar "[4A]", ActiveSheet.Range("N7")
-BuscarReemplazar "[5A]", ActiveSheet.Range("N8")
-BuscarReemplazar "[6A]", ActiveSheet.Range("N9")
-BuscarReemplazar "[7A]", ActiveSheet.Range("N10")
-BuscarReemplazar "[8A]", ActiveSheet.Range("N11")
-BuscarReemplazar "[9A]", ActiveSheet.Range("N12")*/
+    function verinforme($id){
+        $informe= Informe::find($id);
+        return view('previstadeinforme',["informe"=>$informe]);
     }
+
+    
 }

@@ -39,7 +39,7 @@ Route::get('/previstadeinforme/{informe}', [InformeController::class,'verinforme
 
 
 Route::get('/verinforme/{id}', function () {
-    return view('informe');
+    return view('verinforme');
 });
 
 Route::resource('/inicio', InicioController::class)->middleware('auth');

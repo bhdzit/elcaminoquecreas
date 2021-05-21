@@ -1,0 +1,68 @@
+warning: LF will be replaced by CRLF in app/Http/Controllers/InformeController.php.
+The file will have its original line endings in your working directory
+[1mdiff --git a/app/Http/Controllers/InformeController.php b/app/Http/Controllers/InformeController.php[m
+[1mindex 446b122..a57562a 100644[m
+[1m--- a/app/Http/Controllers/InformeController.php[m
+[1m+++ b/app/Http/Controllers/InformeController.php[m
+[36m@@ -5,6 +5,7 @@[m [mnamespace App\Http\Controllers;[m
+ use App\Models\Informe;[m
+ use App\Models\Persona;[m
+ use Illuminate\Http\Request;[m
+[32m+[m[32muse App\Http\Controllers\Prueba;[m
+ use PhpOffice\PhpSpreadsheet\Spreadsheet;[m
+ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;[m
+ [m
+[36m@@ -43,7 +44,7 @@[m [mclass InformeController extends Controller[m
+             $informe->in_tipo = true;[m
+         } else {[m
+             $informe->in_tipo = false;[m
+[31m-        }[m
+[32m+[m[32m        }[m[41m  [m
+ [m
+ [m
+         $informe->in_date = request("date");[m
+[36m@@ -52,39 +53,5 @@[m [mclass InformeController extends Controller[m
+         return redirect()->route('previstadeinforme', $informe->in_id);[m
+     }[m
+ [m
+[31m-[m
+[31m-[m
+[31m-    public function verinforme($id)[m
+[31m-    {[m
+[31m-[m
+[31m-        $array = [[m
+[31m-            "N4", "N5", "N6", "N7", "N8", "N9", "N10", "N11", "N12"[m
+[31m-        ];[m
+[31m-[m
+[31m-        $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();[m
+[31m-        $reader->setLoadSheetsOnly(["Sheet 1", "Informe de Revolución"]);[m
+[31m-        $spreadsheet = $reader->load("PrimordialRSyRLparaenviar2.xlsx");[m
+[31m-        for ($i = 0; $i < count($array); $i++) {[m
+[31m-            echo ($spreadsheet->getActiveSheet()->getCell($array[$i])) . "<p>";[m
+[31m-        }[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-/*BuscarReemplazar "[NombreyApellidosdelapersona]", ActiveSheet.Range("Z4")[m
+[31m-BuscarReemplazar "[Fechadenacimiento]", ActiveSheet.Range("AB4")[m
+[31m-BuscarReemplazar "[Lugardenacimiento]", ActiveSheet.Range("AC4")[m
+[31m-BuscarReemplazar "[Lugardelarevolucionlunar]", ActiveSheet.Range("AH4")[m
+[31m-BuscarReemplazar "[FechadeInicio]", ActiveSheet.Range("AE4")[m
+[31m-BuscarReemplazar "[FechaFinal]", ActiveSheet.Range("AF4")[m
+[31m-[m
+[31m-BuscarReemplazar "[1A]", ActiveSheet.Range("N4")[m
+[31m-BuscarReemplazar "[2A]", ActiveSheet.Range("N5")[m
+[31m-BuscarReemplazar "[3A]", ActiveSheet.Range("N6")[m
+[31m-BuscarReemplazar "[4A]", ActiveSheet.Range("N7")[m
+[31m-BuscarReemplazar "[5A]", ActiveSheet.Range("N8")[m
+[31m-BuscarReemplazar "[6A]", ActiveSheet.Range("N9")[m
+[31m-BuscarReemplazar "[7A]", ActiveSheet.Range("N10")[m
+[31m-BuscarReemplazar "[8A]", ActiveSheet.Range("N11")[m
+[31m-BuscarReemplazar "[9A]", ActiveSheet.Range("N12")*/[m
+[31m-    }[m
+[32m+[m[41m    [m
+ }[m
+[1mdiff --git a/public/hello world.xlsx b/public/hello world.xlsx[m
+[1mdeleted file mode 100644[m
+[1mindex 5f4b0c0..0000000[m
+Binary files a/public/hello world.xlsx and /dev/null differ

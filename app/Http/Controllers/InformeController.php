@@ -51,9 +51,16 @@ class InformeController extends Controller
         $informe->save();
         return redirect()->route('previstadeinforme', $informe->in_id);
     }
-    function verinforme($id){
+    
+    function verprevistaDeinforme($id){
         $informe= Informe::find($id);
         return view('previstadeinforme',["informe"=>$informe]);
+    }
+
+    function verinforme($id){
+//return Informe::leftJoin("personas","pa_id","=","in_ps")->where("in_id","=",$id)->first();
+ 
+return view('verinforme',["informe"=>Informe::leftJoin("personas","pa_id","=","in_ps")->where("in_id","=",$id)->first()]);
     }
 
     

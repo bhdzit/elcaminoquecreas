@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\InformeController;
 use App\Http\Controllers\InicioController;
+use App\Models\Informe;
 use App\Models\Persona;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -38,9 +39,7 @@ Route::get('/informe{primordial}', [InformeController::class,'selecionarAquinVaD
 Route::get('/previstadeinforme/{informe}', [InformeController::class,'verinforme'])->name("previstadeinforme");
 
 
-Route::get('/verinforme/{id}', function () {
-    return view('verinforme');
-});
+Route::get('/verinforme/{id}', [InformeController::class,'verinforme']);
 
 Route::resource('/inicio', InicioController::class)->middleware('auth');
 

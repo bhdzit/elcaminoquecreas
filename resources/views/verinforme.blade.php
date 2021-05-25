@@ -11,6 +11,7 @@
         padding: 20px;
     }
 </style>
+
 <div id="preloader2" class="preloader">
     <div class="loader">
         <div class="ytp-spinner">
@@ -32,9 +33,7 @@
 <section id="home" class="slider_area" style=" background-image: url('../assets/images/bg15.png');">
 
     <div id="content" class="container  mw-100  pt-200">
-        <div class="row justify-content-center mb-5 ">
-            <img class="col-12 col-md-5 mb-5 hoja" src="../assets/svg/portada.svg">
-        </div>
+       
     </div>
 
 </section>
@@ -43,6 +42,7 @@
 @section('script')
 <script src="../js/editTextcontent.js"></script>
 <script>
+    let numeroDeHoja = 1;
     let bool = true;
     setInterval(function() {
         if (bool) {
@@ -61,7 +61,8 @@
     const svg1 = Promise.all([
         fetch('../assets/svg/hoja.svg'),
         fetch('http://127.0.0.1:3700/'),
-        fetch('http://127.0.0.1:3800/')
+        fetch('http://127.0.0.1:3800/'),
+        fetch('../assets/svg/portada.svg')
     ]).then(function(responses) {
         return Promise.all(responses.map(function(response) {
             promesas++;
@@ -74,11 +75,24 @@
         }));
     }).then(function(data) {
         //introduccion = data[0];
+
+        let contenedor = document.getElementById("content");
+ 
+        data[3]=data[3].replace("_nombre","{{$informe->pa_nombre}}");
+        data[3]=data[3].replace("_nacimiento","{{$informe->pa_lugar_nacimiento}}");
+        data[3]=data[3].replace("_lugar","{{$informe->in_lugar}}");
+        data[3]=data[3].replace("_fecha_inicio","{{$informe->in_date}}");
+
+        contenedor.innerHTML += ' <div class="row justify-content-center mb-5 ">' +
+            '<div class="col-12 col-md-5 mb-5 hoja">' + data[3] + '</div></div>';
         hoja = data[0];
         leerTextoporfila(text, hoja, -55.8, 14, "Introduccion", true);
         leerTextoporfila(text1, hoja, -55.8, 14, "Tabla de Importancias", true);
         tablaDeimportancias(data[1], hoja, -55.8, "Tabla de Importancias");
-    descripciones(data[2], hoja, "Descripcion");
+        descripciones(data[2], hoja, "Descripcion");
+
+
+
         $('#preloader2').delay(500).fadeOut(500);
     }).catch(function(error) {
         console.log(error);
@@ -89,6 +103,7 @@
         //        let svgXposicion = 0;
         //        let svgYposicion = 14;
         let textoDeHoja = "";
+        let plantilla = svg;
         for (parafo in parafosDeTexto) {
             let palabras = parafosDeTexto[parafo].split(" ");
             let longitudDeCadena = 0;
@@ -110,17 +125,19 @@
                     longitudDeCadena = 0;
 
                 }
+
+
             }
             svgYposicion += 14;
         }
         if (bool) {
 
-
+            svg = svg.replace("_pajina", numeroDeHoja++);
             svg = svg.replace("titulo", titulo);
             svg = svg.replace("TextoAremplazar", textoDeHoja);
             let contenedor = document.getElementById("content");
             contenedor.innerHTML += ' <div class="row justify-content-center mb-5 ">' +
-                '<div class="col-12 col-md-5 mb-5 hoja">' + svg + '"</div></div>';
+                '<div class="col-12 col-md-5 mb-5 hoja">' + svg + '</div></div>';
         }
         return {
             "text": textoDeHoja,
@@ -145,10 +162,11 @@
                 svgYposicion += 14;
 
                 if (svgYposicion == 462) {
+                    platilla = platilla.replace("_pajina", numeroDeHoja++);
                     platilla = platilla.replace("titulo", titulo);
                     platilla = platilla.replace("TextoAremplazar", textoDeHoja);
                     contenedor.innerHTML += ' <div class="row justify-content-center mb-5 ">' +
-                        '<div class="col-12 col-md-5 mb-5 hoja">' + platilla + '"</div></div>';
+                        '<div class="col-12 col-md-5 mb-5 hoja">' + platilla + '</div></div>';
                     svgYposicion = 14;
                     textoDeHoja = "<tspan class=\"cls-bold \"  x=\"-55.8\">Astro</tspan><tspan class=\"cls-bold \" x=\"60.8\">|PE | PI | CE | CI | AE | AI | B | X | EE | EI | RetNat |</tspan>";
                     platilla = svg;
@@ -156,125 +174,88 @@
                 }
             }
         }
+        svg = svg.replace("_pajina", numeroDeHoja++);
         svg = svg.replace("titulo", titulo);
         svg = svg.replace("TextoAremplazar", textoDeHoja);
         contenedor.innerHTML += ' <div class="row justify-content-center mb-5 ">' +
-            '<div class="col-12 col-md-5 mb-5 hoja">' + svg + '"</div></div>';
+            '<div class="col-12 col-md-5 mb-5 hoja">' + svg + '</div></div>';
 
         //  contenedor.innerHTML = filasDeTablaDeImportancia;
     }
 
-   async function descripciones(descripciones, svg, titulo) {
+    function descripciones(descripciones, svg, titulo) {
 
-        let svgYposicion = -14;
+        let svgYposicion = 14;
         let plantilla = svg;
         let contenedor = document.getElementById("content");
         let textoDeHoja = "";
+
         for (descripcion in jsonDescripcion) {
-            textoDeHoja += "<tspan class=\"cls-bold cls-txt20\" x=\"-50\" y=\"" + svgYposicion + "\">" + descripcion + "</tspan>";
-            svgYposicion += 20;
-            textoDeHoja += "<tspan class=\"cls-bold \" x=\"-50\" y=\"" + svgYposicion + "\">Evento del Tipo 1</tspan>";
-            let eventoTipoUno = (jsonDescripcion[descripcion]["Evento del Tipo 1"]);
-            if (eventoTipoUno != undefined) {
-                eventoTipoUno = eventoTipoUno.replace(" ", "");
-                if (descripciones[eventoTipoUno] != undefined) {
-                    let contenidoDeTexto = leerTextoporfila(descripciones[eventoTipoUno], svg, -55.8, svgYposicion + 14, "Eventos", false);
-                    svgYposicion = contenidoDeTexto["y"];
-                    if (svgYposicion <= 434) {
-                        textoDeHoja += contenidoDeTexto["text"];
-                    } else {
-                        if (contenidoDeTexto["text"] == undefined) contenidoDeTexto["text"] = "";
-                        plantilla = plantilla.replace("titulo", titulo);
-                        plantilla = plantilla.replace("TextoAremplazar", textoDeHoja);
-                        contenedor.innerHTML += ' <div class="row justify-content-center mb-5 ">' +
-                            '<div class="col-12 col-md-5 mb-5 hoja">' + plantilla + '"</div></div>';
-                        svgYposicion = 14;
-                        contenidoDeTexto = leerTextoporfila(descripciones[eventoTipo], svg, -55.8, svgYposicion, "Eventos", false);
-                        textoDeHoja = contenidoDeTexto["text"];
-                        svgYposicion=contenidoDeTexto["y"];
-                        plantilla = svg;
-                    }
-                }
+            textoDeHoja += (descripcion + "\n");
+            for (let i = 1; i < 8; i++) {
+                let eventoTipoUno = (jsonDescripcion[descripcion]["Evento del Tipo " + i]);
 
-
-            }
-            svgYposicion += 20;
-
-
-
-
-
-            textoDeHoja += "<tspan class=\"cls-bold \" x=\"-50\" y=\"" + svgYposicion + "\">Evento del Tipo 2</tspan>";
-            eventoTipo = (jsonDescripcion[descripcion]["Evento del Tipo 2"]);
-            
-            if (eventoTipo != undefined) {
-                eventoTipo = eventoTipo.replace(" ", "");
-                //console.log(descripciones[eventoTipo]);
-                if (descripciones[eventoTipo] != undefined) {
-                    let contenidoDeTexto = leerTextoporfila(descripciones[eventoTipo], svg, -55.8, svgYposicion + 14, "Eventos", false);
-                    // textoDeHoja += (contenidoDeTexto["text"]);
-                    svgYposicion = contenidoDeTexto["y"];
-                    if (svgYposicion <= 434) {
-                        textoDeHoja += contenidoDeTexto["text"];
-                    } else {
-
-                        if (contenidoDeTexto["text"] == undefined) contenidoDeTexto["text"] = "";
-                        plantilla = plantilla.replace("titulo", titulo);
-                        plantilla = plantilla.replace("TextoAremplazar", textoDeHoja);
-                        contenedor.innerHTML += ' <div class="row justify-content-center mb-5 ">' +
-                            '<div class="col-12 col-md-5 mb-5 hoja">' + plantilla + '"</div></div>';
-                        svgYposicion = 14;
-                        contenidoDeTexto = leerTextoporfila(descripciones[eventoTipo], svg, -55.8, svgYposicion, "Eventos", false);
-                        textoDeHoja =contenidoDeTexto["text"];
-                        svgYposicion=contenidoDeTexto["y"];
-                        //console.log(contenidoDeTexto["texto"]);
-                        plantilla = svg;
-                    }
+                if (eventoTipoUno != undefined) {
+                    eventoTipoUno = eventoTipoUno.replace(" ", "");
+                    textoDeHoja += ("Evento Tipo " + i + "\n");
+                    textoDeHoja += (descripciones[eventoTipoUno] + "\n");
                 }
             }
-
-            svgYposicion += 20;
-            textoDeHoja += "<tspan class=\"cls-bold \" x=\"-50\" y=\"" + svgYposicion + "\">Evento del Tipo 3</tspan>";
-            eventoTipo = (jsonDescripcion[descripcion]["Evento del Tipo 3"]);
-            
-            if (eventoTipo != undefined) {
-                eventoTipo = eventoTipo.replace(" ", "");
-                //console.log(descripciones[eventoTipo]);
-                if (descripciones[eventoTipo] != undefined) {
-                    let contenidoDeTexto = leerTextoporfila(descripciones[eventoTipo], svg, -55.8, svgYposicion + 14, "Eventos", false);
-                    // textoDeHoja += (contenidoDeTexto["text"]);
-                    svgYposicion = contenidoDeTexto["y"];
-                    if (svgYposicion <= 434) {
-                        textoDeHoja += contenidoDeTexto["text"];
-                    } else {
-
-                        if (contenidoDeTexto["text"] == undefined) contenidoDeTexto["text"] = "";
-                        plantilla = plantilla.replace("titulo", titulo);
-                        plantilla = plantilla.replace("TextoAremplazar", textoDeHoja);
-                        contenedor.innerHTML += ' <div class="row justify-content-center mb-5 ">' +
-                            '<div class="col-12 col-md-5 mb-5 hoja">' + plantilla + '"</div></div>';
-                        svgYposicion = 14;
-                        contenidoDeTexto = leerTextoporfila(descripciones[eventoTipo], svg, -55.8, svgYposicion, "Eventos", false);
-                        textoDeHoja =contenidoDeTexto["text"];
-                        svgYposicion=contenidoDeTexto["y"];
-                        //console.log(contenidoDeTexto["texto"]);
-                        plantilla = svg;
-                    }
-                }
-            }
-
-            svgYposicion += 20;
-
-
-
         }
+
+        let parafosDeTexto = textoDeHoja.split("\n");
+        textoDeHoja = "";
+        cadenalength = 0;
+        let cadenadetexto = "";
+        let contenedorHtml = "";
+        for (let i = 0; i < parafosDeTexto.length; i++) {
+            let palabras = parafosDeTexto[i].split(" ");
+            for (j in palabras) {
+                cadenadetexto += palabras[j] + " ";
+                cadenalength += palabras[j].length + 1;
+                if (cadenalength >= 70) {
+                    cadenalength = 0;
+                    textoDeHoja += "<tspan x=\"-55\" y=\"" + svgYposicion + "\">" + cadenadetexto + "</span>\n";
+                    svgYposicion += 14;
+                    cadenadetexto = "";
+
+                    if (svgYposicion == 462) {
+                        plantilla = plantilla.replace("_pajina", numeroDeHoja++);
+                        plantilla = plantilla.replace("titulo", titulo);
+                        plantilla = plantilla.replace("TextoAremplazar", textoDeHoja);
+                        contenedorHtml += ' <div class="row justify-content-center mb-5 ">' + '<div class="col-12 col-md-5 mb-5 hoja">' + plantilla + '</div></div>';
+                        plantilla = svg;
+                        textoDeHoja = "";
+                        svgYposicion = 14;
+                    }
+                }
+
+
+            }
+
+            cadenalength = 0;
+            textoDeHoja += "<tspan x=\"-55\" y=\"" + svgYposicion + "\">" + cadenadetexto + "</tspan>\n";
+            svgYposicion += 14;
+            cadenadetexto = "";
+            if (svgYposicion == 462) {
+                console.log("se agrego hoja");
+                plantilla = plantilla.replace("_pajina", numeroDeHoja++);
+                plantilla = plantilla.replace("titulo", titulo);
+                plantilla = plantilla.replace("TextoAremplazar", textoDeHoja);
+                contenedorHtml += ' <div class="row justify-content-center mb-5 ">' + '<div class="col-12 col-md-5 mb-5 hoja">' + plantilla + '</div></div>';
+                plantilla = svg;
+                textoDeHoja = "";
+                svgYposicion = 14;
+            }
+        }
+
+        svg = svg.replace("_pajina", numeroDeHoja++);
         svg = svg.replace("titulo", titulo);
         svg = svg.replace("TextoAremplazar", textoDeHoja);
-        contenedor.innerHTML += ' <div class="row justify-content-center mb-5 ">' +
-            '<div class="col-12 col-md-5 mb-5 hoja">' + svg + '"</div></div>';
 
-
+        contenedorHtml += ' <div class="row justify-content-center mb-5 ">' +
+            '<div class="col-12 col-md-5 mb-5 hoja">' + svg + '</div></div>';
+        contenedor.innerHTML += contenedorHtml;
     }
-
 </script>
 @stop

@@ -33,7 +33,7 @@
 <section id="home" class="slider_area" style=" background-image: url('../assets/images/bg15.png');">
 
     <div id="content" class="container  mw-100  pt-200">
-       
+
     </div>
 
 </section>
@@ -77,14 +77,14 @@
         //introduccion = data[0];
 
         let contenedor = document.getElementById("content");
- 
-        data[3]=data[3].replace("_nombre","{{$informe->pa_nombre}}");
-        data[3]=data[3].replace("_nacimiento","{{$informe->pa_lugar_nacimiento}}");
-        data[3]=data[3].replace("_lugar","{{$informe->in_lugar}}");
-        data[3]=data[3].replace("_fecha_inicio","{{$informe->in_date}}");
 
-        contenedor.innerHTML += ' <div class="row justify-content-center mb-5 ">' +
-            '<div class="col-12 col-md-5 mb-5 hoja">' + data[3] + '</div></div>';
+        data[3] = data[3].replace("_nombre", "{{$informe->pa_nombre}}");
+        data[3] = data[3].replace("_nacimiento", "{{$informe->pa_lugar_nacimiento}}");
+        data[3] = data[3].replace("_lugar", "{{$informe->in_lugar}}");
+        data[3] = data[3].replace("_fecha_inicio", "{{$informe->in_date}}");
+
+        contenedor.innerHTML += ' <div class="row justify-content-center">' +
+            '<div class="col-12 col-md-5 hoja">' + data[3] + '</div></div>';
         hoja = data[0];
         leerTextoporfila(text, hoja, -55.8, 14, "Introduccion", true);
         leerTextoporfila(text1, hoja, -55.8, 14, "Tabla de Importancias", true);
@@ -136,8 +136,8 @@
             svg = svg.replace("titulo", titulo);
             svg = svg.replace("TextoAremplazar", textoDeHoja);
             let contenedor = document.getElementById("content");
-            contenedor.innerHTML += ' <div class="row justify-content-center mb-5 ">' +
-                '<div class="col-12 col-md-5 mb-5 hoja">' + svg + '</div></div>';
+            contenedor.innerHTML += ' <div class="row justify-content-center">' +
+                '<div class="col-12 col-md-5 hoja">' + svg + '</div></div>';
         }
         return {
             "text": textoDeHoja,
@@ -157,7 +157,7 @@
             if (jsonFilasDeTablaImportancias[row] != undefined) {
 
 
-                textoDeHoja += "<tspan x=\"" + svgXposicion + "\" y=\"" + svgYposicion + "\">" + jsonFilasDeTablaImportancias[row] + "</tspan>";
+                textoDeHoja += "<a href=\"#" + jsonFilasDeTablaImportancias[row] + "\"><tspan  x=\"" + svgXposicion + "\" y=\"" + svgYposicion + "\">" + jsonFilasDeTablaImportancias[row] + "</tspan></a>";
                 textoDeHoja += "<tspan x=\"" + (svgXposicion + 120) + "\" y=\"" + svgYposicion + "\">" + tabla[row] + "</tspan>";
                 svgYposicion += 14;
 
@@ -165,8 +165,8 @@
                     platilla = platilla.replace("_pajina", numeroDeHoja++);
                     platilla = platilla.replace("titulo", titulo);
                     platilla = platilla.replace("TextoAremplazar", textoDeHoja);
-                    contenedor.innerHTML += ' <div class="row justify-content-center mb-5 ">' +
-                        '<div class="col-12 col-md-5 mb-5 hoja">' + platilla + '</div></div>';
+                    contenedor.innerHTML += ' <div class="row justify-content-center">' +
+                        '<div class="col-12 col-md-5 hoja">' + platilla + '</div></div>';
                     svgYposicion = 14;
                     textoDeHoja = "<tspan class=\"cls-bold \"  x=\"-55.8\">Astro</tspan><tspan class=\"cls-bold \" x=\"60.8\">|PE | PI | CE | CI | AE | AI | B | X | EE | EI | RetNat |</tspan>";
                     platilla = svg;
@@ -177,8 +177,8 @@
         svg = svg.replace("_pajina", numeroDeHoja++);
         svg = svg.replace("titulo", titulo);
         svg = svg.replace("TextoAremplazar", textoDeHoja);
-        contenedor.innerHTML += ' <div class="row justify-content-center mb-5 ">' +
-            '<div class="col-12 col-md-5 mb-5 hoja">' + svg + '</div></div>';
+        contenedor.innerHTML += ' <div class="row justify-content-center">' +
+            '<div class="col-12 col-md-5 hoja">' + svg + '</div></div>';
 
         //  contenedor.innerHTML = filasDeTablaDeImportancia;
     }
@@ -191,7 +191,7 @@
         let textoDeHoja = "";
 
         for (descripcion in jsonDescripcion) {
-            textoDeHoja += (descripcion + "\n");
+            textoDeHoja += "_titulo" + (descripcion + "\n");
             for (let i = 1; i < 8; i++) {
                 let eventoTipoUno = (jsonDescripcion[descripcion]["Evento del Tipo " + i]);
 
@@ -223,7 +223,7 @@
                         plantilla = plantilla.replace("_pajina", numeroDeHoja++);
                         plantilla = plantilla.replace("titulo", titulo);
                         plantilla = plantilla.replace("TextoAremplazar", textoDeHoja);
-                        contenedorHtml += ' <div class="row justify-content-center mb-5 ">' + '<div class="col-12 col-md-5 mb-5 hoja">' + plantilla + '</div></div>';
+                        contenedorHtml += ' <div class="row justify-content-center">' + '<div class="col-12 col-md-5 hoja">' + plantilla + '</div></div>';
                         plantilla = svg;
                         textoDeHoja = "";
                         svgYposicion = 14;
@@ -234,15 +234,23 @@
             }
 
             cadenalength = 0;
-            textoDeHoja += "<tspan x=\"-55\" y=\"" + svgYposicion + "\">" + cadenadetexto + "</tspan>\n";
+            if (cadenadetexto.includes("_titulo")) {
+                svgYposicion+=14;
+                textoDeHoja += "<tspan class=\"pcls-5\" id=\""+cadenadetexto.replace("_titulo","").replace(" ","")+"\" x=\"-55\" y=\"" + svgYposicion + "\">" + cadenadetexto.replace("_titulo","") + "</tspan>\n";
+                svgYposicion+=14;
+            } else {
+                textoDeHoja += "<tspan x=\"-55\" y=\"" + svgYposicion + "\">" + cadenadetexto + "</tspan>\n";
+
+            }
+
             svgYposicion += 14;
             cadenadetexto = "";
             if (svgYposicion == 462) {
-                console.log("se agrego hoja");
+
                 plantilla = plantilla.replace("_pajina", numeroDeHoja++);
                 plantilla = plantilla.replace("titulo", titulo);
                 plantilla = plantilla.replace("TextoAremplazar", textoDeHoja);
-                contenedorHtml += ' <div class="row justify-content-center mb-5 ">' + '<div class="col-12 col-md-5 mb-5 hoja">' + plantilla + '</div></div>';
+                contenedorHtml += ' <div class="row justify-content-center ">' + '<div class="col-12 col-md-5  hoja">' + plantilla + '</div></div>';
                 plantilla = svg;
                 textoDeHoja = "";
                 svgYposicion = 14;
@@ -253,8 +261,8 @@
         svg = svg.replace("titulo", titulo);
         svg = svg.replace("TextoAremplazar", textoDeHoja);
 
-        contenedorHtml += ' <div class="row justify-content-center mb-5 ">' +
-            '<div class="col-12 col-md-5 mb-5 hoja">' + svg + '</div></div>';
+        contenedorHtml += ' <div class="row justify-content-center ">' +
+            '<div class="col-12 col-md-5 hoja">' + svg + '</div></div>';
         contenedor.innerHTML += contenedorHtml;
     }
 </script>

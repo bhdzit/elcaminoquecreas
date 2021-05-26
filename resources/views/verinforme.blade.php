@@ -60,8 +60,8 @@
     let promesas = -1;
     const svg1 = Promise.all([
         fetch('../assets/svg/hoja.svg'),
-        fetch('http://198.251.75.37/:3700/'),
-        fetch('http://198.251.75.37/:3800/'),
+        fetch('http://198.251.75.37:3700/'),
+        fetch('http://198.251.75.37:3800/'),
         fetch('../assets/svg/portada.svg')
     ]).then(function(responses) {
         return Promise.all(responses.map(function(response) {

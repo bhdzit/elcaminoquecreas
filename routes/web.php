@@ -30,7 +30,7 @@ Route::get('/revolucionlunar', function () {
     return view('revolucionlunar');
 });
 
-Route::post('informe{informe}ciudad',[InformeController::class,'selecionarCiudadDeInforme']);
+Route::post('informeciudad',[InformeController::class,'selecionarCiudadDeInforme']);
 Route::post('generarinforme',[InformeController::class,'generarInforme']);
 
 Route::get('/informe{primordial}', [InformeController::class,'selecionarAquinVaDirigidofunction'])->name("informe");

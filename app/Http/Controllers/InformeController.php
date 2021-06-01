@@ -17,16 +17,16 @@ class InformeController extends Controller
         return view('informe', ['informe' => $informe, "personas" => Persona::where('pa_us', '=', auth()->id())->get()]);
     }
 
-    public function selecionarCiudadDeInforme(Request $request, $informe)
+    public function selecionarCiudadDeInforme(Request $request)
     {
         //return $request;
         $request->validate([
-
+            'informe'=> 'required',
             'persona' => 'required|exists:personas,pa_nombre',
             'date' => 'required',
         ]);
 
-        return view('informeciudad', ["request" => $request, "persona" => Persona::find(request('personaId')), "informe" => $informe]);
+        return view('informeciudad', ["request" => $request, "persona" => Persona::find(request('personaId')), "informe" => $request->informe]);
     }
 
     public function generarInforme(Request $request)

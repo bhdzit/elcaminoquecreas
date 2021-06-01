@@ -7,7 +7,7 @@
 <!--====== SLIDER PART START ======-->
 
 <section id="home" class="slider_area" style=" background-image: url('./assets/images/bg15.png');">
-    <form method="POST" action="informesolarciudad">
+    <form method="POST" action="informeciudad">
         {{ csrf_field() }}
         <div class="container  mw-100  pt-200">
             <div class="row justify-content-center ml-50 mr-50 mb-50">
@@ -69,6 +69,8 @@
         </div>
 
         <input name="personaId" type="hidden"  id="personaId">
+        <input name="informe" type="hidden"  id="informe" value=" {{$informe}}">
+        
     </form>
 </section>
 @endsection

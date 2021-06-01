@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </div>
-     
+
         </div>
 
     </div>
@@ -127,6 +127,7 @@
 
                                             <div class="card-body nav-card d-md-none">
                                                 <ul class="nav flex-column ">
+                                                    <li class="nav-item"><a href="{{ route('informe', 'primordial lunar') }}" class="nav-link"><img class="svg-menu" src="../assets/svg/moon-star.svg">PRIMORDIAL</a></li>
                                                     <!--                                                    <li class="nav-item"><a class="nav-link">Arco </a></li>
                                                     <li class="nav-item"><a class="nav-link">Regentes I</a></li>
                                                     <li class="nav-item"><a class="nav-link">Regentes II</a></li>

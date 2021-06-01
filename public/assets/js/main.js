@@ -593,7 +593,9 @@ function fechasDeRevolucion(date, informe) {
     //  alert(sumarDias(fechaDeFin,27.34));
 
     if (informe.includes("solar")) {
-        nuevaFechaDefin = sumarDias(nuevaFechaDefin, 365.24)
+        nuevaFechaDefin = sumarDias(nuevaFechaDefin, 365.24);
+    } else {
+        nuevaFechaDefin = sumarDias(nuevaFechaDefin, 27.34);
     }
 
 

@@ -10,7 +10,7 @@
         {{ csrf_field() }}
         <div class="container  mw-100  pt-200">
             <div class="row justify-content-center ml-50 mr-50 mb-50">
-                <h2 class="title text-white text-center text-uppercase">PRIMORDIAL {{$informe}}</h2>
+                <h2 class="title text-white text-center text-uppercase">{{$informe}}</h2>
                 <p class=" mt-5 text-white text-center">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
                     vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
@@ -60,7 +60,7 @@
         <input name="persona" type="hidden" value="{{$persona->pa_id}}">
         <input name="version" type="hidden" value="{{$request->version}}">
         <input name="date" type="hidden" value="{{$request->date}}">
-        <input name="informe" type="hidden" value="primordial {{$informe}}">
+        <input name="informe" type="hidden" value="{{$informe}}">
     </form>
 
 </section>

@@ -16,7 +16,7 @@ class InicioController extends Controller
     public function index()
     {
         return view('inicio',['personas'=>Persona::where('pa_us','=',auth()->id())->get(),
-        'informes'=>Informe::where('in_us','=',auth()->id())->get()]);
+        'informes'=>Informe::leftjoin("personas","pa_id","=","in_ps")->where('in_us','=',auth()->id())->get()]);
     }
 
     /**

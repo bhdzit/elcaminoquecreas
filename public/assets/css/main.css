@@ -329,7 +329,8 @@ Inicio de giro de Cartas
     border-radius: 50px;
     padding: 20px 50px 10px 50px;
 }
-.rounded-5{
+
+.rounded-5 {
     border-radius: 30px;
 }
 
@@ -359,7 +360,7 @@ td i {
     cursor: pointer;
 }
 
-.btn-white{
+.btn-white {
     display: block;
     border: unset;
     background: white;
@@ -368,55 +369,58 @@ td i {
     padding: 10px;
     font-size: x-large;
 }
-.btn-blue{
+
+.btn-blue {
     display: block;
     border: unset;
-    background:#46CEFC;
+    background: #46CEFC;
     color: white;
     border-radius: 50px;
     padding: 10px;
     font-size: x-large;
 }
-.btn-white-purple{
+
+.btn-white-purple {
     display: block;
     border: unset;
-    background:#6884D6;
+    background: #6884D6;
     color: white;
     border-radius: 50px;
     padding: 10px;
     font-size: x-large;
 }
+
 .swal2-show {
-    overflow-x:auto;
+    overflow-x: auto;
     width: 600px;
     border-radius: 25px;
-
 }
-.swal2-show input,.swal2-show select{
+
+.swal2-show input, .swal2-show select {
     border-radius: 50px;
     border: 2px solid #00000087;
     margin-top: 10px;
     font-size: x-large;
 }
-.swal2-show input[type="date"]{
 
+.swal2-show input[type="date"] {
     width: 45%;
     font-size: 1.2em;
     padding: 5px;
     margin-right: 5%;
 }
 
-.swal2-show input[type="time"]{
-
+.swal2-show input[type="time"] {
     width: 45%;
     font-size: 1.2em;
     padding: 5px;
     margin-left: 5%;
 }
+
 .swal2-actions button {
-    display: block ;
+    display: block;
     border: unset !important;
-    background-color:#6884D6 !important;
+    background-color: #6884D6 !important;
     color: white !important;
     border-radius: 50px !important;
     width: 50%;
@@ -425,9 +429,10 @@ td i {
     text-align: center;
 }
 
-.swal2-content{
+.swal2-content {
     padding: unset !important;
 }
+
 /*  fin de Giro de Cartas*/
 
 @media (max-width: 767px) {
@@ -451,15 +456,32 @@ td i {
     .product-img-info {
         background: white;
     }
-    .ml-100{
+    .ml-100 {
         margin: unset;
     }
-    
 }
-.text-red-600{
+
+.text-red-600 {
     color: red;
     font-size: 1rem;
     background: #ffffff;
     border-radius: 50px;
     border: 3px solid #9370db;
+}
+
+.informes-container {
+    padding-right: 50px;
+    max-height: 370px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+a:link {
+    text-decoration: none !important;
+}
+a:hover {
+    text-decoration: none !important;
 }

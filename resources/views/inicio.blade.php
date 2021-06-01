@@ -69,21 +69,24 @@
                     <button class="col-12 col-md-7 btn-white-purple">Modificar datos personales</button>
                 </div>
                 <p class="text-center mt-5 mb-4"><strong>ÚLTIMOS INFORMES REALIZADOS</strong></p>
-                @forelse($informes as $informe)
-                <div class=" row bg-white p-4 rounded-5 mb-4 ml-100">
-                    <div class="col-3">
-                        <img src="assets/images/bg14.png">
-                    </div>
-                    <div class="col-9">
-                        <p class="text-secondary mb-3">{{$informe->in_nombre}}</p>
-                        <p class="text-secondary mb-3">MARIA CLARA </p>
-                        <p class="text-secondary ">Tipo : <label class="text-success">Completo</label></p>
-                    </div>
-                </div>
-                @empty
-                <p class="text-center">No hay infromes recientes</p>
-                @endforelse
+                <div class="informes-container scrollbar scrollbar-night-fade">
+                    @forelse($informes as $informe)
 
+                    <a href="./verinforme/{{$informe->in_id}}" target="_blank"><div class="cursor-pointer row bg-white p-4 rounded-5 mb-4 ml-100">
+                        <div class="col-3">
+                            <img src="assets/images/bg14.png">
+                        </div>
+                        <div class="col-9">
+                            <p class="text-secondary mb-3 text-uppercase">{{$informe->in_nombre}}</p>
+                            <p class="text-secondary mb-3">{{$informe->pa_nombre}} </p>
+                            <p class="text-secondary ">Tipo :@if($informe->in_tipo==1)<label class="text-success">Completo</label>@else<label class="text-success">Gratis</label> @endif</p>
+                        </div>
+                    </div>
+                    @empty
+                    <p class="text-center">No hay infromes recientes</p>
+                    </a>
+                    @endforelse
+                </div>
             </div>
 
 

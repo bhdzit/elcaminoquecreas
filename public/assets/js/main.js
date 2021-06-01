@@ -1,3 +1,6 @@
+let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+
 $(function () {
 
     "use strict";
@@ -257,8 +260,8 @@ function navbarChange(item) {
 
 function mostrarDatosDePersona(datos) {
     console.log(datos);
-    let fecha =datos.fecha_nacimiento.split("-"); 
-    let edad = new Date().getFullYear()- fecha[0];
+    let fecha = datos.fecha_nacimiento.split("-");
+    let edad = new Date().getFullYear() - fecha[0];
     console.log(edad);
 
     Swal.fire({
@@ -266,7 +269,7 @@ function mostrarDatosDePersona(datos) {
         html:
             '<p>DATOS DE NACIMIENTO<p>' +
             '<table class="table"><thead><tr><th>Edad</th> <th>Lugar</th> <th>Año</th> <th>Mes</th> <th>Día</th> <th>Hora</th> <th>Acción</th></tr></thead>' +
-            '<tr><td>'+edad+'</td> <td>'+datos.pa_lugar_nacimiento+'</td><td>'+fecha[0]+'</td><td>'+fecha[1]+'</td><td>'+fecha[2].split(' ')[0]+'</td><td>'+fecha[2].split(' ')[1]+'</td><td><i class="fas fa-pencil-alt d-inline"></i>' +
+            '<tr><td>' + edad + '</td> <td>' + datos.pa_lugar_nacimiento + '</td><td>' + fecha[0] + '</td><td>' + fecha[1] + '</td><td>' + fecha[2].split(' ')[0] + '</td><td>' + fecha[2].split(' ')[1] + '</td><td><i class="fas fa-pencil-alt d-inline"></i>' +
             '<i class= "fas fa-times d-inline" ></i>' +
             '<i class="fas fa-info-circle d-inline"></i>' +
             '</td ></tr></table >',
@@ -306,26 +309,26 @@ function agregarPersona(token, ruta) {
 }
 
 
-function editarPersona(token, ruta,data) {
+function editarPersona(token, ruta, data) {
     console.log(data);
     Swal.fire({
         title: '<h4>EDITAR PERSONA</h4>',
         html:
             '<form action="' + ruta + '" method="POST">' +
             token +
-            '<input type="hidden" name="_method" value="PATCH">'+
+            '<input type="hidden" name="_method" value="PATCH">' +
             '<p>DATOS DE NACIMIENTO<p>' +
-            '<input value="'+data.pa_nombre+'" name="name" required  class="swal2-input" placeholder="Ingresa Nombre" >' +
-            '<div class="justify-content-center">'+
-            '<input value="'+data.fecha_nacimiento.split(" ")[0]+'" required name="date" type="date"  class="col-5"  >' +
-            '<input value="'+data.fecha_nacimiento.split(" ")[1]+'" required name="time" type="time"  class="col-5"></div>' +
+            '<input value="' + data.pa_nombre + '" name="name" required  class="swal2-input" placeholder="Ingresa Nombre" >' +
+            '<div class="justify-content-center">' +
+            '<input value="' + data.fecha_nacimiento.split(" ")[0] + '" required name="date" type="date"  class="col-5"  >' +
+            '<input value="' + data.fecha_nacimiento.split(" ")[1] + '" required name="time" type="time"  class="col-5"></div>' +
             '<select id="provincia" required name="provincia" class="swal2-input">' +
             '<option>Selecione prvoncia</option>' +
 
             getPaises +
 
             '</select>' +
-            '<input value="'+data.pa_lugar_nacimiento.split(",")[1]+'" required  name="ciudad" id="swal-input1" class="swal2-input" placeholder="CIUDAD">' +
+            '<input value="' + data.pa_lugar_nacimiento.split(",")[1] + '" required  name="ciudad" id="swal-input1" class="swal2-input" placeholder="CIUDAD">' +
             '<input  class="swal2-confirm swal2-styled" type="submit" value="Enviar">' +
             '</form>',
         showCloseButton: true,
@@ -335,7 +338,7 @@ function editarPersona(token, ruta,data) {
 
     });
 
-    document.getElementById("provincia").value=data.pa_lugar_nacimiento.split(",")[0];
+    document.getElementById("provincia").value = data.pa_lugar_nacimiento.split(",")[0];
 }
 
 
@@ -578,4 +581,29 @@ function getPaises() {
         '<option value="Yemen" id="YE">Yemen</option>' +
         '<option value="Zambia" id="ZM">Zambia</option>' +
         '<option value="Zimbabue" id="ZW">Zimbabue</option>';
+}
+
+
+function fechasDeRevolucion(date, informe) {
+
+    let fechaDeFin = date.split("-");
+    //fechaDeFin = fechaDeFin.setDate(fechaDeFin.getDate() + 2);
+    let nuevaFechaDefin = new Date(fechaDeFin[0], fechaDeFin[1] - 1, fechaDeFin[2]);
+    //  alert(nuevaFechaDefin.getDate());
+    //  alert(sumarDias(fechaDeFin,27.34));
+
+    if (informe.includes("solar")) {
+        nuevaFechaDefin = sumarDias(nuevaFechaDefin, 365.24)
+    }
+
+
+    return {
+        "fecha_de_inicio": fechaDeFin[2] + "/" + meses[fechaDeFin[1] * 1] + "/" + fechaDeFin[0],
+        "fecha_de_fin": nuevaFechaDefin.getDate() + "/" + meses[(nuevaFechaDefin.getMonth() + 1)] + "/" + nuevaFechaDefin.getFullYear()
+    };
+}
+
+function sumarDias(fecha, dias) {
+    fecha.setDate(fecha.getDate() + dias);
+    return fecha;
 }

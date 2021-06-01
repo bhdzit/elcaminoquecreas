@@ -23,7 +23,7 @@
 
 
                 <p class="text-center text-white p-0 mb-4"><strong>FECHA DE REVOLUCIÓN PRESENTADA</strong></p>
-                <h3 class="text-center text-white p-0 mb-4 fw-normal">DESDE: {{$persona->fecha_nacimiento}} | HASTA: {{$request->date}}</h3>
+                <h3 id="fecha" class="text-center text-white p-0 mb-4 fw-normal"></h3>
 
                 <p class="text-center text-white p-0 mb-4"><strong>PARA : </strong></p>
                 <h3 class="text-center text-white p-0 mb-4 fw-normal text-uppercase">{{$persona->pa_nombre}}</h3>
@@ -60,6 +60,17 @@
         <input name="persona" type="hidden" value="{{$persona->pa_id}}">
         <input name="version" type="hidden" value="{{$request->version}}">
         <input name="date" type="hidden" value="{{$request->date}}">
-        <input name="informe" type="hidden" value="{{$informe}}">
+        <input name="informe" type="hidden" value="primordial {{$informe}}">
     </form>
+
 </section>
+@endsection
+@section('script')
+<script>
+ 
+
+    let fechas = fechasDeRevolucion("{{$request -> date}}", "{{$informe}}");
+    document.getElementById("fecha").innerText = "DESDE: "+fechas.fecha_de_inicio+ " | HASTA:"+fechas.fecha_de_fin;
+
+</script>
+@endsection

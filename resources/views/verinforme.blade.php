@@ -77,11 +77,16 @@
         //introduccion = data[0];
 
         let contenedor = document.getElementById("content");
-
+        let fechas = fechasDeRevolucion("{{$informe->in_date}}", "{{$informe->in_nombre}}");
+        console.log(fechas,"{{$informe->in_date}}",);
         data[3] = data[3].replace("_nombre", "{{$informe->pa_nombre}}");
         data[3] = data[3].replace("_nacimiento", "{{$informe->pa_lugar_nacimiento}}");
         data[3] = data[3].replace("_lugar", "{{$informe->in_lugar}}");
-        data[3] = data[3].replace("_fecha_inicio", "{{$informe->in_date}}");
+        data[3] = data[3].replace("_fecha_inicio", fechas.fecha_de_inicio);
+        data[3] = data[3].replace("_fecha_fin",fechas.fecha_de_fin)
+        data[3] = data[3].replace("_nombreDeInforme","{{$informe->in_nombre}}".split(" ")[0]);
+        data[3] = data[3].replace("_tipoDeinforme","{{$informe->in_nombre}}".split(" ")[1]);
+
 
         contenedor.innerHTML += ' <div class="row justify-content-center">' +
             '<div class="col-12 col-md-5 hoja">' + data[3] + '</div></div>';
@@ -158,7 +163,7 @@
 
 
                 textoDeHoja += "<a href=\"#" + jsonFilasDeTablaImportancias[row] + "\"><tspan  x=\"" + svgXposicion + "\" y=\"" + svgYposicion + "\">" + jsonFilasDeTablaImportancias[row] + "</tspan></a>";
-                textoDeHoja += "<tspan x=\"" + (svgXposicion + 120) + "\" y=\"" + svgYposicion + "\">" + tabla[row] + "</tspan>";
+                textoDeHoja += "<tspan x=\"" + (svgXposicion + 180) + "\" y=\"" + svgYposicion + "\">" + tabla[row] + "</tspan>";
                 svgYposicion += 14;
 
                 if (svgYposicion == 462) {
@@ -215,11 +220,11 @@
                 cadenalength += palabras[j].length + 1;
                 if (cadenalength >= 70) {
                     cadenalength = 0;
-                    textoDeHoja += "<tspan x=\"-55\" y=\"" + svgYposicion + "\">" + cadenadetexto + "</span>\n";
+                    textoDeHoja += "<tspan x=\"-55\" y=\"" + svgYposicion + "\">" + cadenadetexto + "</tspan>\n";
                     svgYposicion += 14;
                     cadenadetexto = "";
 
-                    if (svgYposicion == 462) {
+                    if (svgYposicion >= 462) {
                         plantilla = plantilla.replace("_pajina", numeroDeHoja++);
                         plantilla = plantilla.replace("titulo", titulo);
                         plantilla = plantilla.replace("TextoAremplazar", textoDeHoja);
@@ -234,10 +239,11 @@
             }
 
             cadenalength = 0;
-            if (cadenadetexto.includes("_titulo")) {
-                svgYposicion+=14;
-                textoDeHoja += "<tspan class=\"pcls-5\" id=\""+cadenadetexto.replace("_titulo","").replace(" ","")+"\" x=\"-55\" y=\"" + svgYposicion + "\">" + cadenadetexto.replace("_titulo","") + "</tspan>\n";
-                svgYposicion+=14;
+            if (cadenadetexto.includes("_titulo")||cadenadetexto.includes("Evento")) {
+                let posDetitulo=cadenadetexto.includes("_titulo")?100:50;
+                svgYposicion += 14;
+                textoDeHoja += "<tspan class=\"pcls-5\" id=\"" + cadenadetexto.replace("_titulo", "").replace(" ", "") + "\" x=\""+posDetitulo+"\" y=\"" + svgYposicion + "\">" + cadenadetexto.replace("_titulo", "") + "</tspan>\n";
+                svgYposicion += 14;
             } else {
                 textoDeHoja += "<tspan x=\"-55\" y=\"" + svgYposicion + "\">" + cadenadetexto + "</tspan>\n";
 
@@ -245,7 +251,7 @@
 
             svgYposicion += 14;
             cadenadetexto = "";
-            if (svgYposicion == 462) {
+            if (svgYposicion >= 462) {
 
                 plantilla = plantilla.replace("_pajina", numeroDeHoja++);
                 plantilla = plantilla.replace("titulo", titulo);

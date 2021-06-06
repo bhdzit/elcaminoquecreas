@@ -18,6 +18,7 @@ class Informe extends Model
     'in_nombre',
     'in_tipo',
     'in_date',
-    'in_lugar'];
+    'in_lugar',
+    'in_pay_id'];
 
 }

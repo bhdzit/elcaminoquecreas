@@ -65,7 +65,6 @@
 
                 <div class="row justify-content-center">
                     <button class="col-12 col-md-7 btn-white  mb-3">Crear nuevo informe</button>
-                    <button class="col-12 col-md-7  btn-blue mb-3">Modificar datos de pago</button>
                     <button class="col-12 col-md-7 btn-white-purple">Modificar datos personales</button>
                 </div>
                 <p class="text-center mt-5 mb-4"><strong>ÚLTIMOS INFORMES REALIZADOS</strong></p>
